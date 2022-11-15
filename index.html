@@ -1,1 +1,265 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><link rel="stylesheet" href="css/style.css"><link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png"><link rel="manifest" href="./img/favicon/site.webmanifest"><title>ParrotSwap</title></head><body><div class="wrapper"><div class="content"><header class="header"><div class="header__wrapper"><div class="_container"><div class="header__body"><div class="header__logo-wrapper"><button class="menu__burger _burger" id="menu-open" type="button"><span></span></button> <a class="header__logo header-logo" href="index.html"><i class="header-logo__icon"><img src="img/logo.svg" alt="header-logo"> </i><span class="header-logo__text">ParrotSwap</span></a></div><nav class="header__menu menu" id="header-menu"><div class="menu__wrapper" id="menu-wrapper"></div><div class="menu__body menu-body" id="menu-content"><div class="menu-body__top menu-top"><div class="menu-top__logo menu-logo"><i class="menu-logo__icon"><img src="img/logo.svg" alt="header-logo"> </i><span class="menu-logo__text">ParrotSwap</span></div><button class="menu-top__close _close" id="menu-close" type="button"></button></div><div class="menu-content__content menu-content"><ul class="menu-content__list"><li class="menu-content__list-item"><a class="menu-content__list-link menu-content__list-link_active" href="#">Dashboard</a></li><li class="menu-content__list-item"><a class="menu-content__list-link" href="#">Dashboard</a></li><li class="menu-content__list-item"><a class="menu-content__list-link" href="#">Dashboard</a></li><li class="menu-content__list-item"><button class="menu-content__list-link" data-popup-open data-popup="popup-01" type="button">Dashboard</button></li></ul></div></div></nav><div class="header__actions header-actions"><div class="header-actions__language header-language" data-da=".menu-content,552.2,1" data-select><button class="header-language__button" data-select-button type="button"><i class="header-language__selected-icon"><img src="img/icon/language/en.svg" alt="English"> </i><span class="header-language__selected-text" data-select-button-text>English</span></button><div class="header-language__dropdown header-language-dropdown" data-select-dropdown><ul class="header-language-dropdown__list"><li class="header-language-dropdown__list-item" data-select-item><i class="header-language-dropdown__icon"><img src="img/icon/language/en.svg" alt="English"> </i><span class="header-language-dropdown__text">English</span></li><li class="header-language-dropdown__list-item" data-select-item><i class="header-language-dropdown__icon"><img src="img/icon/language/spain.svg" alt="Spanish"> </i><span class="header-language-dropdown__text">Spanish</span></li><li class="header-language-dropdown__list-item" data-select-item><i class="header-language-dropdown__icon"><img src="img/icon/language/germany.svg" alt="German"> </i><span class="header-language-dropdown__text">German</span></li><li class="header-language-dropdown__list-item" data-select-item><i class="header-language-dropdown__icon"><img src="img/icon/language/japan.svg" alt="Japanese"> </i><span class="header-language-dropdown__text">Japanese</span></li><li class="header-language-dropdown__list-item" data-select-item><i class="header-language-dropdown__icon"><img src="img/icon/language/france.svg" alt="French"> </i><span class="header-language-dropdown__text">French</span></li></ul></div></div><button class="header-actions__theme" id="theme-website" type="button"></button><div class="header-actions__button header-button"><label class="header-button__label" for="header-wallet"><img src="img/icon/wallet.svg" alt="wallet"></label> <input class="header-button__input" id="header-wallet" name="wallet" type="text" placeholder="Dashboard"></div></div></div></div></div></header><main class="page"></main></div><footer class="footer"><div class="_container"><div class="footer__body"><p class="footer__copy">2022© <span class="footer__copy_grey">Keenthemes</span></p><p class="footer__text">Block:<span class="footer__text_item">33313214</span></p></div></div></footer><div class="modal-wrapper"><div class="modal-wrapper__popup popup" id="popup-01"><div class="popup__body"><div class="popup__top"><div class="popup__title">Заголовок</div><button class="popup__close" data-popup-close type="button"></button></div><div class="popup__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ducimus quod recusandae quo dignissimos perspiciatis, quis deserunt dolorum doloribus nihil delectus, soluta facere eaque iusto! Ullam ab odio libero illo.</div></div></div></div></div><script src="js/script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="css/style.css">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+<link rel="manifest" href="./img/favicon/site.webmanifest">
+   <title> ParrotSwap </title>
+</head>
+
+<body>
+   <div class="wrapper">
+      <div class="content">
+         <header class="header">
+   <div class="header__wrapper">
+      <div class="_container">
+         <div class="header__body">
+            <div class="header__logo-wrapper">
+               <button class="menu__burger _burger" id="menu-open" type="button"><span></span></button>
+               <a class="header__logo header-logo" href="index.html">
+                  <i class="header-logo__icon">
+                     <img src="img/logo.svg" alt="header-logo">
+                  </i>
+                  <span class="header-logo__text">ParrotSwap</span>
+               </a>
+            </div>
+            <nav class="header__menu menu" id="header-menu">
+               <div class="menu__wrapper" id="menu-wrapper"></div>
+               <div class="menu__body menu-body" id="menu-content">
+                  <div class="menu-body__top menu-top">
+                     <div class="menu-top__logo menu-logo">
+                        <i class="menu-logo__icon">
+                           <img src="img/logo.svg" alt="header-logo">
+                        </i>
+                        <span class="menu-logo__text">ParrotSwap</span>
+                     </div>
+                     <button class="menu-top__close _close" id="menu-close" type="button"></button>
+                  </div>
+                  <div class="menu-content__content menu-content">
+                     <ul class="menu-content__list">
+                        <li class="menu-content__list-item">
+                           <a class="menu-content__list-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="menu-content__list-item">
+                           <a class="menu-content__list-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="menu-content__list-item">
+                           <a class="menu-content__list-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="menu-content__list-item">
+                           <button class="menu-content__list-link" data-popup-open data-popup="popup-01"
+                              type="button">Dashboard</button>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </nav>
+            <div class="header__actions header-actions">
+               <div class="header-actions__language header-language" data-da=".menu-content,552.2,1" data-select>
+                  <button class="header-language__button" data-select-button type="button">
+                     <i class="header-language__selected-icon">
+                        <img src="img/icon/language/en.svg" alt="English">
+                     </i>
+                     <span class="header-language__selected-text" data-select-button-text>English</span>
+                  </button>
+                  <div class="header-language__dropdown header-language-dropdown" data-select-dropdown>
+                     <ul class="header-language-dropdown__list">
+                        <li class="header-language-dropdown__list-item" data-select-item>
+                           <i class="header-language-dropdown__icon">
+                              <img src="img/icon/language/en.svg" alt="English">
+                           </i>
+                           <span class="header-language-dropdown__text">English</span>
+                        </li>
+                        <li class="header-language-dropdown__list-item" data-select-item>
+                           <i class="header-language-dropdown__icon">
+                              <img src="img/icon/language/spain.svg" alt="Spanish">
+                           </i>
+                           <span class="header-language-dropdown__text">Spanish</span>
+                        </li>
+                        <li class="header-language-dropdown__list-item" data-select-item>
+                           <i class="header-language-dropdown__icon">
+                              <img src="img/icon/language/germany.svg" alt="German">
+                           </i>
+                           <span class="header-language-dropdown__text">German</span>
+                        </li>
+                        <li class="header-language-dropdown__list-item" data-select-item>
+                           <i class="header-language-dropdown__icon">
+                              <img src="img/icon/language/japan.svg" alt="Japanese">
+                           </i>
+                           <span class="header-language-dropdown__text">Japanese</span>
+                        </li>
+                        <li class="header-language-dropdown__list-item" data-select-item>
+                           <i class="header-language-dropdown__icon">
+                              <img src="img/icon/language/france.svg" alt="French">
+                           </i>
+                           <span class="header-language-dropdown__text">French</span>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <button class="header-actions__theme" id="theme-website" type="button"></button>
+               <button class="header-actions__button header-button" type="button">
+                  <i class="header-button__icon">
+                     <img src="img/icon/wallet.svg" alt="wallet">
+                  </i>
+                  <span class="header-button__text">Dashboard</span>
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+         <main class="page">
+            <!-- <section class="page__info info">
+               <div class="_container">
+                  <div class="info__body">
+                     <div class="info__row info__row_little info-row">
+                        <div class="info-row__header info-row-header">
+                           <h4 class="info-row-header__title info-row-header__title_green">
+                              Прибыль в сутки: 0.8% - 1.5%
+                           </h4>
+                           <div class="info-row-header__prompt info-row-prompt">
+                              <i class="info-row-prompt__icon" data-prompt-button>?</i>
+                              <div class="info-row-prompt__dropdown">
+                                 Lorem ipsum dolor sit amet.
+                              </div>
+                           </div>
+                        </div>
+                        <div class="info-row__content">
+                           <div class="info-row__balance info-row-balance">
+                              <h5 class="info-row-balance__title">Balance contract</h5>
+                              <strong class="info-row-balance__price">$182,426.75</strong>
+                           </div>
+                           <div class="info-row__buttons">
+                              <a class="info-row__button info-row__button_blue" href="#">
+                                 <i class="info-row__button-icon">
+                                    <img src="img/icon/bscscan.svg" alt="bscscan">
+                                 </i>
+                                 <span class="info-row__button-text">Check contract</span>
+                              </a>
+                              <a class="info-row__button info-row__button_green" href="#">
+                                 Deposit
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="info__row info-row">
+                        <div class="info-row__header info-row-header">
+                           <h4 class="info-row-header__title info-row-header__title_blue">
+                              Last wallet address: 0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                           </h4>
+                           <div class="info-row-header__prompt info-row-prompt">
+                              <i class="info-row-prompt__icon" data-prompt-button>?</i>
+                              <div class="info-row-prompt__dropdown">
+                                 Lorem ipsum dolor sit amet.
+                              </div>
+                           </div>
+                        </div>
+                        <div class="info-row__content">
+                           <div class="info-row__balance info-row-balance">
+                              <h5 class="info-row-balance__title">Bonus balance </h5>
+                              <strong class="info-row-balance__price">$426.75</strong>
+                           </div>
+                           <div class="info-row__timer info-row-timer">
+                              <ul class="info-row-timer__list">
+                                 <li class="info-row-timer__item">
+                                    <div class="info-row-timer__number">
+                                       <span class="info-row-timer__number-value" id="hours">00</span>
+                                    </div>
+                                    <span class="info-row-timer__text">Hours</span>
+                                 </li>
+                                 <li class="info-row-timer__item">
+                                    <div class="info-row-timer__number">:</div>
+                                 </li>
+                                 <li class="info-row-timer__item">
+                                    <div class="info-row-timer__number">
+                                       <span class="info-row-timer__number-value" id="minutes">00</span>
+                                    </div>
+                                    <span class="info-row-timer__text">minutes</span>
+                                 </li>
+                                 <li class="info-row-timer__item">
+                                    <div class="info-row-timer__number">:</div>
+                                 </li>
+                                 <li class="info-row-timer__item">
+                                    <div class="info-row-timer__number">
+                                       <span class="info-row-timer__number-value" id="seconds">00</span>
+                                    </div>
+                                    <span class="info-row-timer__text">seconds</span>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section> -->
+         </main>
+      </div>
+      <footer class="footer">
+   <div class="_container">
+      <div class="footer__body">
+         <p class="footer__copy">
+            2022© <a class="footer__copy_grey" href="#">Keenthemes</a>
+         </p>
+         <p class="footer__text">
+            Block:<span class="footer__text_item">33313214</span>
+         </p>
+      </div>
+   </div>
+</footer>
+      <div class="modal-wrapper">
+	<div class="modal-wrapper__popup popup" id="popup-01">
+		<div class="popup__body">
+			<div class="popup__top">
+				<div class="popup__title">
+					Заголовок
+				</div>
+				<button class="popup__close" data-popup-close type="button"></button>
+			</div>
+			<div class="popup__content">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ducimus quod recusandae quo dignissimos
+				perspiciatis, quis deserunt dolorum doloribus nihil delectus, soluta facere eaque iusto! Ullam ab odio
+				libero illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur obcaecati consequatur, ullam
+				dolores molestiae tempora in dolore dolorum aliquid doloremque nam quidem mollitia aut fuga iste neque quo
+				doloribus architecto? Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi esse repudiandae
+				mollitia rerum libero voluptatem sequi odio iure ex! Adipisci animi modi laboriosam architecto doloribus
+				distinctio recusandae saepe porro! In. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et natus
+				quasi tempora eaque adipisci eligendi esse! Facere vitae soluta alias, sapiente, officiis corrupti quam
+				accusantium perferendis reprehenderit sit, eius dolorum. Lorem ipsum dolor sit amet consectetur adipisicing
+				elit. Impedit, itaque rerum laboriosam, fugit earum sunt ratione alias laborum commodi quae mollitia
+				exercitationem similique nemo nesciunt eius explicabo eum animi eos? Lorem ipsum dolor sit amet consectetur
+				adipisicing elit. Obcaecati vel ipsa culpa repudiandae, pariatur in optio facere animi molestiae,
+				consectetur accusamus, praesentium ex excepturi quaerat? Nulla natus nobis autem inventore. Lorem ipsum
+				dolor sit amet consectetur adipisicing elit. Possimus sunt sed voluptatibus animi corporis ad reprehenderit,
+				optio doloribus, pariatur porro provident voluptas aliquam vitae placeat, dolorem quasi dignissimos debitis
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ducimus quod recusandae quo dignissimos
+				perspiciatis, quis deserunt dolorum doloribus nihil delectus, soluta facere eaque iusto! Ullam ab odio
+				libero illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur obcaecati consequatur, ullam
+				dolores molestiae tempora in dolore dolorum aliquid doloremque nam quidem mollitia aut fuga iste neque quo
+				doloribus architecto? Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi esse repudiandae
+				mollitia rerum libero voluptatem sequi odio iure ex! Adipisci animi modi laboriosam architecto doloribus
+				distinctio recusandae saepe porro! In. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et natus
+				quasi tempora eaque adipisci eligendi esse! Facere vitae soluta alias, sapiente, officiis corrupti quam
+				accusantium perferendis reprehenderit sit, eius dolorum. Lorem ipsum dolor sit amet consectetur adipisicing
+				elit. Impedit, itaque rerum laboriosam, fugit earum sunt ratione alias laborum commodi quae mollitia
+				exercitationem similique nemo nesciunt eius explicabo eum animi eos? Lorem ipsum dolor sit amet consectetur
+				adipisicing elit. Obcaecati vel ipsa culpa repudiandae, pariatur in optio facere animi molestiae,
+				consectetur accusamus, praesentium ex excepturi quaerat? Nulla natus nobis autem inventore. Lorem ipsum
+				dolor sit amet consectetur adipisicing elit. Possimus sunt sed voluptatibus animi corporis ad reprehenderit,
+				optio doloribus, pariatur porro provident voluptas aliquam vitae placeat, dolorem quasi dignissimos debitis
+			</div>
+		</div>
+	</div>
+</div>
+   </div>
+   <script src="js/script.js"></script>
+</body>
+
+</html>
