@@ -1,1 +1,416 @@
-let setTimer=14399,timePreloader=1e3,durationCounter=800;function save(a,b){localStorage.setItem(a,b)}function get(a){return localStorage.getItem(a)}function rem(a){localStorage.removeItem(a)}function off(){localStorage.clear()}function myPopups(){const a=document.querySelectorAll("[data-popup-open]"),b=document.querySelectorAll(".lock-padding"),c=document.body;let d=!0;const e=500;if(a){function f(a){if(a&&d){const b=document.querySelector(".popup._active");b?g(b,!1):h(),a.classList.add("_active"),a.addEventListener("click",function(a){a.target.closest(".popup__body")||g(a.target.closest(".popup"))})}}function g(a,b=!0){d&&(a.classList.remove("_active"),b&&i())}function h(){const a=window.innerWidth-document.querySelector(".wrapper").offsetWidth+"px";b&&b.forEach(b=>{b.style.paddingRight=a}),c.style.paddingRight=a,c.classList.add("_lock-scroll"),d=!1,setTimeout(()=>{d=!0},e)}function i(){setTimeout(()=>{b&&b.forEach(a=>{a.style.paddingRight="0px"}),c.style.paddingRight="0px",c.classList.remove("_lock-scroll")},e),d=!1,setTimeout(()=>{d=!0},e)}a.forEach(a=>{a.addEventListener("click",function(a){const b=this.getAttribute("data-popup"),c=document.getElementById(b);f(c)})});const j=document.querySelectorAll("[data-popup-close]");j.forEach(a=>{a.addEventListener("click",function(b){g(a.closest(".popup"))})}),document.addEventListener("keydown",function(a){if("Escape"===a.code){const a=document.querySelector(".popup._active");g(a)}}),function(){Element.prototype.closest||(Element.prototype.closest=function(a){for(var b=this;b;){if(b.matches(a))return b;b=b.parentElement}return null})}(),function(){Element.prototype.matches||(Element.prototype.mathes=Element.prototype.matchesSelector||Element.prototype.webkitMatchesSelector||Element.prototype.mozMatchesSelector||Element.prototype.msMatchesSelector)}()}}window.addEventListener("load",myPopups);function myBurger(){function a(){g&&(d.classList.add("_active"),f.classList.add("_active"),bodyLock())}function b(){d.classList.remove("_active"),f.classList.remove("_active")}const c=document.getElementById("menu-open"),d=document.getElementById("menu-content"),f=document.getElementById("menu-wrapper");let g=!0;const h=600,i=document.querySelectorAll("._lock-padding"),j=document.body;if(c&&d&&f){function d(){const a=window.innerWidth-document.querySelector(".wrapper").offsetWidth+"px";i&&i.forEach(b=>{b.style.paddingRight=a}),j.style.paddingRight=a,j.classList.add("_lock-scroll"),g=!1,setTimeout(()=>{g=!0},h)}function k(){setTimeout(()=>{i&&i.forEach(a=>{a.style.paddingRight="0px"}),j.style.paddingRight="0px",j.classList.remove("_lock-scroll")},h),g=!1,setTimeout(()=>{g=!0},h)}c.addEventListener("click",a);const l=document.getElementById("menu-close");document.addEventListener("click",function(a){const c=a.target;(c===l||c===f&&g)&&(b(),k())}),document.addEventListener("click",function(a){const c=a.target;c.closest("[data-popup-open]")&&g&&b()})}}myBurger();function theme(){function a(){d?c.classList.add(d):c.classList.add(e)}function b(a=!1){let b,d=c.classList.contains("light")?"light":"dark";"light"==d?b="dark":"dark"===d&&(b="light"),c.classList.remove(d),c.classList.add(b),a?localStorage.setItem("user-theme",b):null}const c=document.documentElement,d=localStorage.getItem("user-theme");let e;window.matchMedia&&(e=window.matchMedia("prefers-color-scheme: dark").matches?"dark":"light"),window.matchMedia("prefers-color-scheme: dark").addEventListener("change",function(){d?null:b()});const f=document.getElementById("theme-website");f&&f.addEventListener("click",function(){b(!0)}),a()}theme();let isMobile={Android:function(){return navigator.userAgent.match(/Android/i)},BlackBerry:function(){return navigator.userAgent.match(/BlackBerry/i)},iOS:function(){return navigator.userAgent.match(/iPhone|iPad|iPod/i)},Opera:function(){return navigator.userAgent.match(/Opera Mini/i)},Windows:function(){return navigator.userAgent.match(/IEMobile/i)},any:function(){return isMobile.Android()||isMobile.BlackBerry()||isMobile.iOS()||isMobile.Opera()||isMobile.Windows()}};isMobile.any()?document.body.classList.add("_touch"):document.body.classList.add("_pc");function prompts(){const a=document.querySelectorAll("[data-prompt-button]");0<a.length&&a.forEach(a=>{document.addEventListener("click",function(b){function c(){e.classList.add("_active"),a.nextElementSibling.classList.add("_active")}function d(){a.classList.remove("_active"),a.nextElementSibling.classList.remove("_active")}const e=b.target;if(isMobile.any())if(!a.nextElementSibling.classList.contains("_active"))e===a&&c();else{const b=a.nextElementSibling.querySelectorAll("a");b.forEach(b=>{e===a.nextElementSibling||e===b||d(),e===a&&d()})}})})}prompts();function timer(){var a=Math.floor;function b(){function b(a,b){a=10>a?"0"+a:a,b.innerHTML=`${a}`}let g=a(c/60/60),h=a(c/60)-60*g,i=a(c%60);b(g,d),b(h,e),b(i,f),c--}let c=setTimer;setInterval(()=>{1>c&&(c=setTimer)},setTimer),setInterval(b,1e3);const d=document.getElementById("hours"),e=document.getElementById("minutes"),f=document.getElementById("seconds")}setTimeout(timer,timePreloader);function loadsDigits(){function a(){function a(a){let c=a?a:document.querySelectorAll("[data-digits-counter]");c&&c.forEach(a=>{b(a)})}function b(a){let b=null,c=parseInt(a.dataset.digitsCounter)?parseInt(a.dataset.digitsCounter):durationCounter;const d=parseInt(a.innerHTML),e=0,f=g=>{b||(b=g);let h=Math.min((g-b)/c,1);const i=Math.floor(h*(e+d));let j;.3>h&&(j=c+14.5,c=j),.95<h&&(j=c+12.5,c=j),a.innerHTML=i,1>h&&window.requestAnimationFrame(f)};window.requestAnimationFrame(f)}const c=document.querySelectorAll(".info-row-balance__load");c.forEach(a=>{a.style.display="none"});const d=document.querySelectorAll(".info-row-balance__price-item");d.forEach(a=>{a.style.display="inline"}),a()}setTimeout(a,300)}setTimeout(loadsDigits,timePreloader);
+let setTimer = 14399; // СМЕНА ТАЙМЕРА В СЕКУНДАХ
+let timePreloader = 1000; // СМЕНА СКОРОСТИ ПРЕЛОУДЕРА
+let durationCounter = 800; // СМЕНА СКОРОСТИ СЧЕТЧИКА В МИЛЛИСЕКУНДАХ (1 СЕКУНДА = 1000 МИЛЕСЕКУНД)
+
+//< " НАСТРОЙКА ЛОКАЛЬНЫХ СОХРАНЕНИЙ " >=============================================================================================================>//
+
+function save(name, value) {
+	localStorage.setItem(name, value)
+}
+function get(name) {
+	return localStorage.getItem(name)
+}
+function rem(name) {
+	localStorage.removeItem(name)
+}
+function off() {
+	localStorage.clear();
+}
+
+//< " ПОДКЛЮЧЕНИЕ JS КОМПОНЕНТОВ " >=============================================================================================================>//
+
+function myPopups() {
+	const links = document.querySelectorAll("[data-popup-open]");
+	const lockPadding = document.querySelectorAll(".lock-padding");
+	const body = document.body;
+
+	let unlock = true;
+
+	const time = 500;
+
+	if (links) {
+		links.forEach(link => {
+			link.addEventListener("click", function (e) {
+				const popupName = this.getAttribute("data-popup");
+				const currentPopup = document.getElementById(popupName);
+				popupOpen(currentPopup);
+			});
+		});
+
+		const close = document.querySelectorAll("[data-popup-close]");
+
+		close.forEach(item => {
+			item.addEventListener("click", function (e) {
+				popupClose(item.closest(".popup"));
+			});
+		});
+
+		function popupOpen(currentPopup) {
+			if (currentPopup && unlock) {
+				const popupActive = document.querySelector(".popup._active");
+
+				if (popupActive) {
+					popupClose(popupActive, false);
+				} else {
+					bodyLock();
+				}
+
+				currentPopup.classList.add("_active");
+
+				currentPopup.addEventListener("click", function (e) {
+					if (!e.target.closest(".popup__body")) {
+						popupClose(e.target.closest(".popup"));
+					}
+				});
+			}
+		}
+
+		function popupClose(popupActive, doUnlock = true) {
+			if (unlock) {
+				popupActive.classList.remove("_active");
+				if (doUnlock) {
+					bodyUnLock();
+				}
+			}
+		}
+
+		function bodyLock() {
+			const lockPaddingValue = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+
+			if (lockPadding) {
+				lockPadding.forEach(elem => {
+					elem.style.paddingRight = lockPaddingValue;
+				});
+			}
+			body.style.paddingRight = lockPaddingValue;
+			body.classList.add("_lock-scroll");
+
+			unlock = false;
+			setTimeout(() => {
+				unlock = true;
+			}, time);
+		}
+
+		function bodyUnLock() {
+			setTimeout(() => {
+				if (lockPadding) {
+					lockPadding.forEach(elem => {
+						elem.style.paddingRight = "0px";
+					});
+				}
+				body.style.paddingRight = "0px";
+				body.classList.remove("_lock-scroll");
+			}, time);
+
+			unlock = false;
+			setTimeout(() => {
+				unlock = true;
+			}, time);
+		}
+
+		document.addEventListener("keydown", function (e) {
+			if (e.code === "Escape") {
+				const popupActive = document.querySelector(".popup._active");
+				popupClose(popupActive);
+			}
+		});
+
+		(function () {
+			if (!Element.prototype.closest) {
+				Element.prototype.closest = function (css) {
+					var node = this;
+					while (node) {
+						if (node.matches(css)) return node;
+						else node = node.parentElement;
+					}
+					return null;
+				};
+			}
+		})();
+		(function () {
+			if (!Element.prototype.matches) {
+				Element.prototype.mathes = Element.prototype.matchesSelector ||
+					Element.prototype.webkitMatchesSelector ||
+					Element.prototype.mozMatchesSelector ||
+					Element.prototype.msMatchesSelector;
+			}
+		})();
+	}
+}
+window.addEventListener("load", myPopups);; // ПОПАПЫ
+
+function myBurger() {
+	const burgerOpen = document.getElementById("menu-open");
+	const burgerContent = document.getElementById("menu-content");
+	const burgerWrap = document.getElementById("menu-wrapper");
+
+	let unlock = true;
+	const time = 600;
+
+	const lockPadding = document.querySelectorAll("._lock-padding");
+	const body = document.body;
+
+	function addActive() {
+		if (unlock) {
+			burgerContent.classList.add("_active");
+			burgerWrap.classList.add("_active");
+			bodyLock();
+		}
+	}
+
+	function removeActive() {
+		burgerContent.classList.remove("_active");
+		burgerWrap.classList.remove("_active");
+	}
+
+	if (burgerOpen && burgerContent && burgerWrap) {
+		burgerOpen.addEventListener("click", addActive);
+
+		const burgerClose = document.getElementById("menu-close");
+		document.addEventListener("click", function (e) {
+			const elementTarget = e.target;
+
+			if (elementTarget === burgerClose || elementTarget === burgerWrap && unlock) {
+				removeActive();
+				bodyUnLock();
+			}
+		});
+
+		document.addEventListener("click", function (e) {
+			const elementTarget = e.target;
+			if (elementTarget.closest("[data-popup-open]") && unlock) {
+				removeActive();
+			}
+		});
+	}
+
+	function bodyLock() {
+		const lockPaddingValue = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+
+		if (lockPadding) {
+			lockPadding.forEach(elem => {
+				elem.style.paddingRight = lockPaddingValue;
+			});
+		}
+		body.style.paddingRight = lockPaddingValue;
+		body.classList.add("_lock-scroll");
+
+		unlock = false;
+		setTimeout(() => {
+			unlock = true;
+		}, time);
+	}
+
+	function bodyUnLock() {
+		setTimeout(() => {
+			if (lockPadding) {
+				lockPadding.forEach(elem => {
+					elem.style.paddingRight = "0px";
+				});
+			}
+			body.style.paddingRight = "0px";
+			body.classList.remove("_lock-scroll");
+		}, time);
+
+		unlock = false;
+		setTimeout(() => {
+			unlock = true;
+		}, time);
+	}
+}
+myBurger(); // МЕНЮ БУРГЕР
+
+function theme() {
+	const htmlBlock = document.documentElement;
+	const saveUserTheme = localStorage.getItem("user-theme");
+
+	let userTheme;
+	if (window.matchMedia) {
+		userTheme = window.matchMedia('prefers-color-scheme: dark').matches ? 'dark' : 'light';
+	}
+	window.matchMedia('prefers-color-scheme: dark').addEventListener("change", function () {
+		!saveUserTheme ? changeTheme() : null;
+	});
+
+	const themeButton = document.getElementById("theme-website");
+	if (themeButton) {
+		themeButton.addEventListener("click", function () {
+			changeTheme(true);
+		});
+	}
+
+	function setThemeClass() {
+		if (saveUserTheme) {
+			htmlBlock.classList.add(saveUserTheme);
+		} else {
+			htmlBlock.classList.add(userTheme);
+		}
+	}
+	setThemeClass()
+
+	function changeTheme(saveTheme = false) {
+		let currentTheme = htmlBlock.classList.contains("light") ? 'light' : 'dark';
+		let newTheme;
+
+		if (currentTheme === 'light') {
+			newTheme = 'dark';
+		} else if (currentTheme === 'dark') {
+			newTheme = 'light';
+		}
+
+		htmlBlock.classList.remove(currentTheme);
+		htmlBlock.classList.add(newTheme);
+		saveTheme ? localStorage.setItem("user-theme", newTheme) : null;
+	}
+}
+theme();; // СМЕНА ТЕМЫ САЙТА
+
+//< " СКРИПТЫ " >=============================================================================================================>//
+
+let isMobile = {
+	Android: function () { return navigator.userAgent.match(/Android/i); },
+	BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); },
+	iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); },
+	Opera: function () { return navigator.userAgent.match(/Opera Mini/i); },
+	Windows: function () { return navigator.userAgent.match(/IEMobile/i); },
+	any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); }
+};
+
+if (isMobile.any()) {
+	document.body.classList.add("_touch");
+} else {
+	document.body.classList.add("_pc");
+}
+
+//< " СКРИПТЫ " >=============================================================================================================>//
+
+function prompts() {
+	const promptButtons = document.querySelectorAll("[data-prompt-button]");
+	if (promptButtons.length > 0) {
+		promptButtons.forEach(button => {
+			document.addEventListener("click", function (e) {
+				const elementTarget = e.target;
+
+				function addClassPrompt() {
+					elementTarget.classList.add("_active");
+					button.nextElementSibling.classList.add("_active");
+				}
+				function removeClassPrompt() {
+					button.classList.remove("_active");
+					button.nextElementSibling.classList.remove("_active");
+				}
+
+				if (isMobile.any()) {
+					if (!button.nextElementSibling.classList.contains("_active")) {
+						if (elementTarget === button) {
+							addClassPrompt()
+						}
+					} else {
+						const promptLinks = button.nextElementSibling.querySelectorAll("a");
+						promptLinks.forEach(link => {
+							if (elementTarget === button.nextElementSibling || elementTarget === link) {
+							} else {
+								removeClassPrompt()
+							}
+							if (elementTarget === button) {
+								removeClassPrompt()
+							}
+						});
+					}
+				}
+			});
+		});
+	}
+}
+prompts();
+
+function timer() {
+	let time = setTimer;
+
+	setInterval(() => {
+		if (time < 1) {
+			time = setTimer;
+		}
+	}, setTimer);
+
+	setInterval(counterTimer, 1000);
+	const hoursItem = document.getElementById("hours"),
+		minutesItem = document.getElementById("minutes"),
+		secondsItem = document.getElementById("seconds");
+
+	function counterTimer() {
+		let hours = Math.floor(time / 60 / 60),
+			minutes = Math.floor(time / 60) - (hours * 60),
+			seconds = Math.floor(time % 60);
+
+		function setTime(setItem, whatItem) {
+			setItem = setItem < 10 ? "0" + setItem : setItem;
+			whatItem.innerHTML = `${setItem}`;
+		}
+
+		setTime(hours, hoursItem);
+		setTime(minutes, minutesItem);
+		setTime(seconds, secondsItem);
+
+		time--;
+	}
+
+}
+setTimeout(timer, timePreloader);
+
+function loadsDigits() {
+	setTimeout(windowLoad, 300);
+
+	function windowLoad() {
+		const digitsLoad = document.querySelectorAll(".info-row-balance__load");
+		digitsLoad.forEach(load => {
+			load.style.display = "none";
+		});
+		const digits = document.querySelectorAll(".info-row-balance__price-item");
+		digits.forEach(digit => {
+			digit.style.display = "inline";
+		});
+
+		function digitsCounterInit(digitsCountersItems) {
+			let digitsCounters = digitsCountersItems ? digitsCountersItems : document.querySelectorAll("[data-digits-counter]");
+			if (digitsCounters) {
+				digitsCounters.forEach(digitsCounter => {
+					digitsCounterAnimate(digitsCounter)
+				});
+			}
+		}
+
+		function digitsCounterAnimate(digitsCounter) {
+			let startTimestamp = null;
+			let duration = parseInt(digitsCounter.dataset.digitsCounter) ? parseInt(digitsCounter.dataset.digitsCounter) : durationCounter;
+			const startValue = parseInt(digitsCounter.innerHTML);
+			const startPosition = 0;
+			const step = (timestamp) => {
+				if (!startTimestamp) startTimestamp = timestamp;
+				let progress = Math.min((timestamp - startTimestamp) / duration, 1);
+				const counterInner = Math.floor(progress * (startPosition + startValue));
+				let newDuration;
+
+				if (progress < 0.30) {
+					newDuration = duration + 14.5;
+					duration = newDuration;
+				}
+
+				if (progress > 0.95) {
+					newDuration = duration + 12.5;
+					duration = newDuration;
+				}
+
+				digitsCounter.innerHTML = counterInner;
+				if (progress < 1) {
+					window.requestAnimationFrame(step);
+				}
+			}
+			window.requestAnimationFrame(step);
+		}
+
+		digitsCounterInit()
+	}
+
+}
+setTimeout(loadsDigits, timePreloader);
