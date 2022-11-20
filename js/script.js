@@ -232,7 +232,7 @@ function theme() {
 
 	let userTheme;
 	if (window.matchMedia) {
-		userTheme = window ? 'dark' : 'light';
+		userTheme = window ? 'light' : 'dark';
 	}
 	window.addEventListener("change", function () {
 		!saveUserTheme ? changeTheme() : null;
