@@ -1446,6 +1446,9 @@ body._lock-scroll {
   line-height: 123.0769230769%;
   color: #019EF7;
 }
+.popup-contact-header__link:not(:last-child) {
+  margin-right: 4px;
+}
 
 .popup-contact-prompt__icon {
   flex-grow: 0;
