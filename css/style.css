@@ -825,7 +825,7 @@ body._lock-scroll {
   background-color: transparent;
   color: var(--color-menu-item);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 123.0769230769%;
 }
 @media (max-width: 1290px) {
@@ -927,7 +927,7 @@ body._lock-scroll {
 }
 .header-language__selected-text {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 123.0769230769%;
   color: #6C7083;
 }
@@ -1060,7 +1060,7 @@ body._lock-scroll {
 .footer__copy {
   transition: color 0.2s ease 0s;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 123.0769230769%;
   color: var(--color-footer-grey);
 }
@@ -1081,7 +1081,7 @@ body._lock-scroll {
 .footer__text {
   transition: color 0.2s ease 0s;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 100%;
   color: var(--color-footer-grey);
 }
@@ -1158,7 +1158,7 @@ body._lock-scroll {
   padding-top: 10px;
   padding-bottom: 10px;
   /* Если меньше контейнера */
-  padding-right: 25px;
+  padding-right: 22px;
   /* Если меньше контейнера */
   padding-left: 25px;
   width: 100%;
@@ -1172,7 +1172,7 @@ body._lock-scroll {
 }
 @media (max-width: 1290px) {
   .popup__top {
-    padding-right: calc(15px + 10 * ((100vw - 320px) / 970));
+    padding-right: calc(12px + 10 * ((100vw - 320px) / 970));
   }
 }
 @media (max-width: 1290px) {
@@ -1494,7 +1494,7 @@ body._lock-scroll {
 }
 .popup-contact-prompt__title {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 118.75%;
   color: var(--color-title);
 }
@@ -2260,7 +2260,7 @@ body._lock-scroll {
   transition: color 0.2s ease 0s;
   /* Если меньше контейнера */
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 123.0769230769%;
 }
 @media (max-width: 1290px) {
@@ -2347,7 +2347,7 @@ body._lock-scroll {
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 123.0769230769%;
   color: var(--var-font-color);
 }
@@ -2448,14 +2448,14 @@ body._lock-scroll {
 .faqs__title {
   transition: color 0.2s ease 0s;
   /* Если меньше контейнера */
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 122.7272727273%;
   color: var(--color-title);
 }
 @media (max-width: 1290px) {
   .faqs__title {
-    font-size: calc(16px + 6 * ((100vw - 320px) / 970));
+    font-size: calc(16px + 2 * ((100vw - 320px) / 970));
   }
 }
 .faqs__title:not(:last-child) {
@@ -2612,7 +2612,7 @@ body._lock-scroll {
 }
 .faqs-columns__title {
   transition: color 0.2s ease 0s;
-  font-weight: 600;
+  font-weight: 400;
   text-align: left;
   color: var(--color-title);
   font-size: 18px;
@@ -2621,8 +2621,8 @@ body._lock-scroll {
   padding-left: 35px;
   padding-bottom: 15px;
   transition: color 0.2s ease 0s;
-  font-size: 14px;
-  line-height: 128.5714285714%;
+  font-size: 13px;
+  line-height: 138.4615384615%;
   color: var(--var-font-color);
 }
 
