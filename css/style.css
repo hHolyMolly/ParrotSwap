@@ -922,8 +922,8 @@ body._lock-scroll {
   .header-language__dropdown {
     margin-top: 10px;
     padding: 10px 5px;
-    max-width: 200px;
-    min-width: 200px;
+    max-width: 175px;
+    min-width: 175px;
     position: absolute;
     top: 100%;
     left: 0;
@@ -963,7 +963,7 @@ body._lock-scroll {
 .header-language-dropdown__list-item {
   padding: 10px;
   width: 100%;
-  min-height: 40px;
+  min-height: 35px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
