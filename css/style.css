@@ -136,6 +136,7 @@ html:not(.light) body, html:not(.dark) body {
   --color-footer-grey: #6C7083;
   --color-border-dashed: #E4E6EE;
   --shadow-dropdown: 0px 0px 50px 0px rgba(82, 63, 105, 0.15);
+  --shadow-header: 0px 0px 40px 0px rgba(82, 63, 105, 0.08);
 }
 html:not(.light) body .header-actions__theme-icon_light, html:not(.dark) body .header-actions__theme-icon_light {
   display: block;
@@ -214,6 +215,7 @@ html:not(.dark).light body {
   --color-footer-grey: #6C7083;
   --color-border-dashed: #E4E6EE;
   --shadow-dropdown: 0px 0px 50px 0px rgba(82, 63, 105, 0.15);
+  --shadow-header: 0px 0px 40px 0px rgba(82, 63, 105, 0.08);
 }
 html:not(.dark).light body .header-actions__theme-icon_light {
   display: block;
@@ -288,6 +290,7 @@ html:not(.light).dark body {
   --color-footer-grey: #565674;
   --color-border-dashed: #323247;
   --shadow-dropdown: 0px 0px 30px rgba(0, 0, 0, 0.3);
+  --shadow-header: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
 html:not(.light).dark body .header-actions__theme-icon_light {
   display: none;
@@ -496,7 +499,7 @@ body._lock-scroll {
   left: 0;
   z-index: 50;
   transition: background-color 0.2s ease 0s, box-shadow 0.2s ease 0s;
-  box-shadow: var(--shadow-dropdown);
+  box-shadow: var(--shadow-header);
   background-color: var(--color-content);
 }
 .header__body {
@@ -992,7 +995,6 @@ body._lock-scroll {
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 .header-language-dropdown__icon img {
@@ -1368,7 +1370,7 @@ body._lock-scroll {
   font-size: 13px;
   font-weight: 400;
   line-height: 123.0769230769%;
-  color: var(--var-font-color);
+  color: var(--color-menu-item);
 }
 .popup-deposit__label:not(:last-child) {
   margin-bottom: 20px;
