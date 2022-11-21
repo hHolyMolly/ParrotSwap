@@ -496,6 +496,7 @@ body._lock-scroll {
   left: 0;
   z-index: 50;
   transition: background-color 0.2s ease 0s, box-shadow 0.2s ease 0s;
+  box-shadow: var(--shadow-dropdown);
   background-color: var(--color-content);
 }
 .header__body {
@@ -508,8 +509,7 @@ body._lock-scroll {
   display: flex;
   align-items: center;
 }
-.header__logo-wrapper:not(:last-child) {
-  /* Если меньше контейнера */
+.header__logo-wrapper:not(:last-child) { /* Если меньше контейнера */
   margin-right: 25px;
 }
 @media (max-width: 1290px) {
@@ -908,7 +908,7 @@ body._lock-scroll {
   font-size: 13px;
   font-weight: 400;
   line-height: 123.0769230769%;
-  color: #6C7083;
+  color: var(--color-menu-item);
 }
 @media (max-width: 552.2px) {
   .header-language__selected-text {
@@ -1005,7 +1005,7 @@ body._lock-scroll {
   font-size: 13px;
   font-weight: 400;
   line-height: 123.0769230769%;
-  color: #6C7083;
+  color: var(--color-menu-item);
 }
 @media (max-width: 552.2px) {
   .header-language-dropdown__text {
@@ -1906,7 +1906,7 @@ body._lock-scroll {
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 123.0769230769%;
 }
 .info-row-header__title:not(:last-child) {
@@ -2180,7 +2180,7 @@ body._lock-scroll {
   text-transform: uppercase;
   /* Если меньше контейнера */
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 125%;
   letter-spacing: 0.1em;
   color: #6C7083;
