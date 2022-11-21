@@ -136,8 +136,11 @@ html:not(.light) body, html:not(.dark) body {
   --color-footer-grey: #6C7083;
   --color-border-dashed: #E4E6EE;
 }
-html:not(.light) body .header-actions__theme, html:not(.dark) body .header-actions__theme {
-  background-image: url("../img/icon/light.svg");
+html:not(.light) body .header-actions__theme-icon_light, html:not(.dark) body .header-actions__theme-icon_light {
+  display: block;
+}
+html:not(.light) body .header-actions__theme-icon_dark, html:not(.dark) body .header-actions__theme-icon_dark {
+  display: none;
 }
 html:not(.light) body .footer__copy, html:not(.dark) body .footer__copy {
   color: #A1A5B7;
@@ -210,8 +213,11 @@ html:not(.dark).light body {
   --color-footer-grey: #6C7083;
   --color-border-dashed: #E4E6EE;
 }
-html:not(.dark).light body .header-actions__theme {
-  background-image: url("../img/icon/light.svg");
+html:not(.dark).light body .header-actions__theme-icon_light {
+  display: block;
+}
+html:not(.dark).light body .header-actions__theme-icon_dark {
+  display: none;
 }
 html:not(.dark).light body .footer__copy {
   color: #A1A5B7;
@@ -280,8 +286,11 @@ html:not(.light).dark body {
   --color-footer-grey: #565674;
   --color-border-dashed: #323247;
 }
-html:not(.light).dark body .header-actions__theme {
-  background-image: url("../img/icon/dark.svg");
+html:not(.light).dark body .header-actions__theme-icon_light {
+  display: none;
+}
+html:not(.light).dark body .header-actions__theme-icon_dark {
+  display: block;
 }
 html:not(.light).dark body .footer__copy {
   color: #565674;
@@ -589,9 +598,6 @@ body._lock-scroll {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 18px 18px;
   border-radius: 4px;
   background-color: transparent;
 }
@@ -611,6 +617,16 @@ body._lock-scroll {
   .header-actions__theme:hover {
     background-color: var(--bg-menu-item);
   }
+}
+.header-actions__theme-icon {
+  width: 18px;
+  height: 18px;
+}
+.header-actions__theme-icon_light {
+  display: none;
+}
+.header-actions__theme-icon_dark {
+  display: none;
 }
 .header-actions__button {
   padding: 0px 12px;

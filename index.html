@@ -152,7 +152,12 @@
                   </div>
                </div>
                <button class="header-actions__theme" id="theme-website" title="Смена темы" aria-label="Смена темы"
-                  type="button"></button>
+                  type="button">
+                  <img class="header-actions__theme-icon header-actions__theme-icon_light" src="img/icon/light.svg"
+                     alt="light">
+                  <img class="header-actions__theme-icon header-actions__theme-icon_dark" src="img/icon/dark.svg"
+                     alt="dark">
+               </button>
                <button class="header-actions__button header-button" type="button">
                   <i class="header-button__icon">
                      <img src="img/icon/wallet.svg" width="18" height="18" alt="wallet">
@@ -793,7 +798,8 @@
                   prompts();
                   myPopups();
                   myBurger();
-               })
+                  myDepositValue();
+               });
             }
 
             loadData()

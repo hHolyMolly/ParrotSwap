@@ -482,17 +482,18 @@ function prompts() {
 			const elementTarget = e.target;
 
 			if (isMobile.any()) {
-				prompts.forEach(prompt => {
-					prompt.querySelector("[data-prompt-button]").classList.remove("_active");
-					prompt.querySelector(".info-row-prompt__dropdown").classList.remove("_active");
-				});
-
 				if (elementTarget.closest("[data-prompt-button]")) {
-					prompt.querySelector("[data-prompt-button]").classList.toggle("_active");
-					prompt.querySelector(".info-row-prompt__dropdown").classList.toggle("_active");
+					if (!elementTarget.closest("[data-prompt-button]").classList.contains("_active")) {
+						prompt.querySelector("[data-prompt-button]").classList.add("_active");
+						prompt.querySelector(".info-row-prompt__dropdown").classList.add("_active");
+					} else {
+						prompt.querySelector("[data-prompt-button]").classList.remove("_active");
+						prompt.querySelector(".info-row-prompt__dropdown").classList.remove("_active");
+					}
 				}
 			}
 		});
+
 		document.addEventListener("click", function (e) {
 			const elementTarget = e.target;
 
@@ -632,24 +633,28 @@ function myDepositValue() {
 		}
 	});
 }
-myDepositValue();
 
+function goToFaqs() {
+	const faqsTarget = document.querySelectorAll(".faqs-columns__item");
 
+	faqsTarget.forEach(item => {
+		const getHash = item.getAttribute("data-faqs-target");
 
-const faqsTarget = document.querySelectorAll(".faqs-columns__item");
-faqsTarget.forEach(item => {
-	const getHash = item.getAttribute("data-faqs-target");
+		if (window.location.hash === getHash) {
+			const button = item.querySelector("[data-spoller]");
+			const content = button.nextElementSibling;
 
-	if (window.location.hash === getHash) {
-		const button = item.querySelector("[data-spoller]");
-		const content = button.nextElementSibling;
-
-
-
-		window.addEventListener("load", function () {
 			button.classList.add("_active");
 			content.classList.add("_active");
 			content.removeAttribute("hidden")
-		});
-	}
-});
+
+			setTimeout(() => {
+				item.scrollIntoView({
+					behavior: 'smooth',
+					block: 'center'
+				});
+			}, timePreloader + 500);
+		}
+	});
+}
+goToFaqs();
