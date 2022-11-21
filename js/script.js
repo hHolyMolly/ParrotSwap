@@ -633,3 +633,23 @@ function myDepositValue() {
 	});
 }
 myDepositValue();
+
+
+
+const faqsTarget = document.querySelectorAll(".faqs-columns__item");
+faqsTarget.forEach(item => {
+	const getHash = item.getAttribute("data-faqs-target");
+
+	if (window.location.hash === getHash) {
+		const button = item.querySelector("[data-spoller]");
+		const content = button.nextElementSibling;
+
+
+
+		window.addEventListener("load", function () {
+			button.classList.add("_active");
+			content.classList.add("_active");
+			content.removeAttribute("hidden")
+		});
+	}
+});
