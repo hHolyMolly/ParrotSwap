@@ -34,86 +34,40 @@
                <div class="menu__wrapper" id="menu-wrapper"></div>
                <div class="menu__body menu-body" id="menu-content">
                   <div class="menu-body__top menu-top">
-                     <div class="menu-top__logo menu-logo">
+                     <a class="menu-top__logo menu-logo" href="index.html">
                         <i class="menu-logo__icon">
                            <img src="img/logo.png" width="40" height="46" alt="header-logo">
                         </i>
                         <span class="menu-logo__text">ParrotSwap</span>
-                     </div>
+                     </a>
                      <button class="menu-top__close _close" id="menu-close" type="button"></button>
                   </div>
                   <div class="menu-content__content menu-content">
                      <ul class="menu-content__list">
                         <li class="menu-content__list-item">
-                           <a class="menu-content__list-link" href="index.html">Home</a>
+                           <a class="menu-content__list-link" id="menu-01" href="index.html">Home</a>
                         </li>
                         <li class="menu-content__list-item">
-                           <a class="menu-content__list-link" href="#">Dashboard</a>
+                           <a class="menu-content__list-link" id="menu-02" href="#">Dashboard</a>
                         </li>
                         <li class="menu-content__list-item">
-                           <a class="menu-content__list-link" href="#">Audit</a>
+                           <a class="menu-content__list-link" id="menu-03" href="#">Audit</a>
                         </li>
                         <li class="menu-content__list-item">
-                           <a class="menu-content__list-link" href="faqs.html">FAQ</a>
-                        </li>
-                        <li class="menu-content__list-item">
-                           <button class="menu-content__list-link" data-popup-open data-popup="contact-us"
-                              type="button">Contact Us</button>
+                           <a class="menu-content__list-link" id="menu-04" href="faqs.html">FAQ</a>
                         </li>
                      </ul>
-                     <div class="header-actions__language header-actions__language_mobile header-language" data-select>
-                        <button class="header-language__button" data-select-button data-select-lang type="button">
-                           <i class="header-language__selected-icon">
-                              <img src="img/icon/language/en.svg" width="18" height="18" alt="English">
-                           </i>
-                           <span class="header-language__selected-text" data-select-button-text>English</span>
-                        </button>
-                        <div class="header-language__dropdown header-language-dropdown" data-select-dropdown>
-                           <ul class="header-language-dropdown__list">
-                              <li class="header-language-dropdown__list-item" data-select-item>
-                                 <i class="header-language-dropdown__icon">
-                                    <img src="img/icon/language/en.svg" width="18" height="18" alt="English">
-                                 </i>
-                                 <span class="header-language-dropdown__text">English</span>
-                              </li>
-                              <li class="header-language-dropdown__list-item" data-select-item>
-                                 <i class="header-language-dropdown__icon">
-                                    <img src="img/icon/language/spain.svg" width="18" height="18" alt="Spanish">
-                                 </i>
-                                 <span class="header-language-dropdown__text">Spanish</span>
-                              </li>
-                              <li class="header-language-dropdown__list-item" data-select-item>
-                                 <i class="header-language-dropdown__icon">
-                                    <img src="img/icon/language/germany.svg" width="18" height="18" alt="German">
-                                 </i>
-                                 <span class="header-language-dropdown__text">German</span>
-                              </li>
-                              <li class="header-language-dropdown__list-item" data-select-item>
-                                 <i class="header-language-dropdown__icon">
-                                    <img src="img/icon/language/japan.svg" width="18" height="18" alt="Japanese">
-                                 </i>
-                                 <span class="header-language-dropdown__text">Japanese</span>
-                              </li>
-                              <li class="header-language-dropdown__list-item" data-select-item>
-                                 <i class="header-language-dropdown__icon">
-                                    <img src="img/icon/language/france.svg" width="18" height="18" loading="lazy"
-                                       alt="French">
-                                 </i>
-                                 <span class="header-language-dropdown__text">French</span>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
                   </div>
                </div>
             </nav>
             <div class="header__actions header-actions">
-               <div class="header-actions__language header-actions__language_pc header-language" data-select>
+               <div class="header-actions__language header-language" data-da=".menu-content__content,552.2,1"
+                  data-select>
                   <button class="header-language__button" data-select-button data-select-lang type="button">
                      <i class="header-language__selected-icon">
                         <img src="img/icon/language/en.svg" width="18" height="18" alt="English">
                      </i>
-                     <span class="header-language__selected-text" data-select-button-text>English</span>
+                     <span class="header-language__selected-text" data-select-button-text id="e-lang-en">English</span>
                   </button>
                   <div class="header-language__dropdown header-language-dropdown" data-select-dropdown>
                      <ul class="header-language-dropdown__list">
@@ -121,32 +75,37 @@
                            <i class="header-language-dropdown__icon">
                               <img src="img/icon/language/en.svg" width="18" height="18" alt="English">
                            </i>
-                           <span class="header-language-dropdown__text">English</span>
+                           <span class="header-language-dropdown__text" data-language-change
+                              id="e-lang-en">English</span>
                         </li>
                         <li class="header-language-dropdown__list-item" data-select-item>
                            <i class="header-language-dropdown__icon">
                               <img src="img/icon/language/spain.svg" width="18" height="18" alt="Spanish">
                            </i>
-                           <span class="header-language-dropdown__text">Spanish</span>
+                           <span class="header-language-dropdown__text" data-language-change
+                              id="e-lang-spa">Spanish</span>
                         </li>
                         <li class="header-language-dropdown__list-item" data-select-item>
                            <i class="header-language-dropdown__icon">
                               <img src="img/icon/language/germany.svg" width="18" height="18" alt="German">
                            </i>
-                           <span class="header-language-dropdown__text">German</span>
+                           <span class="header-language-dropdown__text" data-language-change
+                              id="e-lang-de">German</span>
                         </li>
                         <li class="header-language-dropdown__list-item" data-select-item>
                            <i class="header-language-dropdown__icon">
                               <img src="img/icon/language/japan.svg" width="18" height="18" alt="Japanese">
                            </i>
-                           <span class="header-language-dropdown__text">Japanese</span>
+                           <span class="header-language-dropdown__text" data-language-change
+                              id="e-lang-ja">Japanese</span>
                         </li>
                         <li class="header-language-dropdown__list-item" data-select-item>
                            <i class="header-language-dropdown__icon">
                               <img src="img/icon/language/france.svg" width="18" height="18" loading="lazy"
                                  alt="French">
                            </i>
-                           <span class="header-language-dropdown__text">French</span>
+                           <span class="header-language-dropdown__text" data-language-change
+                              id="e-lang-fr">French</span>
                         </li>
                      </ul>
                   </div>
@@ -777,6 +736,7 @@
 	</div>
 </div>
    </div>
+   <script src="js/change-language.js"></script>
    <script src="js/script.js"></script>
    <script src="js/my-language.js"></script>
    <script src="js/my-pagination.js"></script>

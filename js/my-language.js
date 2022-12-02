@@ -31,7 +31,6 @@ function mySelect() {
 
 				save("lang", innerText);
 
-				buttonToggle.innerHTML = innerText;
 				buttonToggle.classList.remove("_active");
 				dropdownToggle.classList.remove("_active");
 			}
@@ -64,3 +63,27 @@ function mySelect() {
 	});
 }
 mySelect();
+
+const valueLanguageItem = document.querySelector("[data-language-change]");
+const whatLang = valueLanguageItem.getAttribute("id").replace("e-lang-", "");
+
+window.addEventListener("load", setLang.bind(null, whatLang));
+
+function setLang(changeLang) {
+	let p;
+	if (!langArr.hasOwnProperty(changeLang)) return;
+	if (window.hasOwnProperty('localStorage'))
+		window.localStorage.setItem('changeLang', changeLang);
+	for (p in langArr[changeLang]) {
+		document.getElementById(p).innerText = langArr[changeLang][p];
+	}
+}
+var changeLang = (window.hasOwnProperty('localStorage') && window.localStorage.getItem('changeLang', changeLang)) || 'en';
+setLang(changeLang);
+
+const buttonsLanguage = document.querySelectorAll("[data-select-item]");
+buttonsLanguage.forEach(button => {
+	button.addEventListener("click", () => {
+		location.reload();
+	});
+});
