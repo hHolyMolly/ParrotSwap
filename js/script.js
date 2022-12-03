@@ -24,6 +24,18 @@ function off() {
 
 //< " ПОДКЛЮЧЕНИЕ JS КОМПОНЕНТОВ " >=============================================================================================================>//
 
+const themeButton = document.getElementById("theme-website");
+if (themeButton) {
+	themeButton.addEventListener("click", function () {
+		changeTheme();
+	});
+}
+
+window.addEventListener("change", function (e) {
+	if (e.target === themeButton) {
+		!saveUserTheme ? changeTheme() : null;
+	}
+});
 
 function dynamicAdaptive() {
 	function DynamicAdapt(type) {
@@ -560,51 +572,6 @@ function mySpollers() {
 	}
 }
 mySpollers();; // СПОЙЛЕРЫ
-
-function theme() {
-	const htmlBlock = document.documentElement;
-	const saveUserTheme = localStorage.getItem("user-theme");
-
-	let userTheme = 'light';
-
-	const themeButton = document.getElementById("theme-website");
-	if (themeButton) {
-		themeButton.addEventListener("click", function () {
-			changeTheme();
-		});
-	}
-
-	window.addEventListener("change", function (e) {
-		if (e.target === themeButton) {
-			!saveUserTheme ? changeTheme() : null;
-		}
-	});
-
-	function setThemeClass() {
-		if (saveUserTheme) {
-			htmlBlock.classList.add(saveUserTheme);
-		} else {
-			htmlBlock.classList.add(userTheme);
-		}
-	}
-	setThemeClass()
-
-	function changeTheme() {
-		let currentTheme = htmlBlock.classList.contains("light") ? 'light' : 'dark';
-		let newTheme;
-
-		if (currentTheme === 'light') {
-			newTheme = 'dark';
-		} else if (currentTheme === 'dark') {
-			newTheme = 'light';
-		}
-
-		htmlBlock.classList.remove(currentTheme);
-		htmlBlock.classList.add(newTheme);
-		localStorage.setItem("user-theme", newTheme);
-	}
-}
-theme();; // СМЕНА ТЕМЫ САЙТА
 
 //< " СКРИПТЫ " >=============================================================================================================>//
 

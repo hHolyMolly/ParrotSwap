@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<script src="js/my-theme.js"></script>
 <link rel="stylesheet" href="css/style.css">
 <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
@@ -279,7 +280,7 @@
                                  <p class="statistics-general__text statistics-general__text_green">
                                     + $204.00
                                  </p>
-                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                 <a class="statistics-general__text statistics-general__text_blue link-hover" href="#">
                                     0x508a1c...0d52uf
                                  </a>
                               </div>
@@ -727,7 +728,9 @@
 				<i class="popup-prompt__icon">
 					<span class="popup-prompt__icon-letter">?</span>
 				</i>
-				<div class="popup-prompt__title">Here's an example of a question SweetAlert!</div>
+				<div class="popup-prompt__title">
+					ParrotSwap работает только в сети BEP 20, для продолжения пожалуйста зайдите в Метамаск и сменить сеть.
+				</div>
 				<button class="popup-prompt__button header-actions__button header-button" data-popup-close type="button">
 					<span class="header-button__text">Ok, got it!</span>
 				</button>
@@ -756,9 +759,9 @@
 
             loadData()
                .then(() => {
+                  document.body.classList.remove("_lock-scroll");
                   const preloaderEl = document.getElementById('preloader');
                   preloaderEl.remove();
-                  document.body.classList.remove("_lock-scroll");
                   timer();
                   loadsDigits();
                });
