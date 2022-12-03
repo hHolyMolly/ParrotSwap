@@ -1,3 +1,12 @@
+let setTimer = 14399; // СМЕНА ТАЙМЕРА В СЕКУНДАХ
+let timePreloader = 1000; // СМЕНА СКОРОСТИ ПРЕЛОУДЕРА
+let animationSpollers = 300; // СМЕНА СКОРОСТИ АНИМАЦИИ СПОЙЛЕРА
+
+/* НАСТРОЙКА СЧЕТЧИКА */
+const animationCounter = 2; // ДЛИТЕЛЬНОСТЬ АНИМАЦИИ СЧЕТЧИКА (В ЛИБЕ CountUp.js МОЖНО ПОСМОТРЕТЬ ПРИМЕРНУЮ СКОРОСТЬ И КАК БУДЕТ ВЫГЛЯДЕТЬ)
+const counterPrefix = "$"; // ПРЕФИКС ДЛЯ СЧЕТЧИКА, ТАК ЖЕ МОЖНО УКАЗАТЬ ЛЮБОЙ СВОЙ
+const counterSeparator = ","; // РАЗДЕЛЕНИЕ МЕЖДУ СЧЕТЧИКОМ, МОЖНО УКАЗАТЬ ЛЮБОЕ ЗНАЧЕНИЕ - ПРОБЕЛ/КОММА/ТОЧКА И Т.Д.
+
 //< " НАСТРОЙКА ЛОКАЛЬНЫХ СОХРАНЕНИЙ " >=============================================================================================================>//
 
 function save(name, value) {
@@ -15,18 +24,6 @@ function off() {
 
 //< " ПОДКЛЮЧЕНИЕ JS КОМПОНЕНТОВ " >=============================================================================================================>//
 
-const themeButton = document.getElementById("theme-website");
-if (themeButton) {
-	themeButton.addEventListener("click", function () {
-		changeTheme();
-	});
-}
-
-window.addEventListener("change", function (e) {
-	if (e.target === themeButton) {
-		!saveUserTheme ? changeTheme() : null;
-	}
-});
 
 function dynamicAdaptive() {
 	function DynamicAdapt(type) {
@@ -564,6 +561,51 @@ function mySpollers() {
 }
 mySpollers();; // СПОЙЛЕРЫ
 
+function theme() {
+	const htmlBlock = document.documentElement;
+	const saveUserTheme = localStorage.getItem("user-theme");
+
+	let userTheme = 'light';
+
+	const themeButton = document.getElementById("theme-website");
+	if (themeButton) {
+		themeButton.addEventListener("click", function () {
+			changeTheme();
+		});
+	}
+
+	window.addEventListener("change", function (e) {
+		if (e.target === themeButton) {
+			!saveUserTheme ? changeTheme() : null;
+		}
+	});
+
+	function setThemeClass() {
+		if (saveUserTheme) {
+			htmlBlock.classList.add(saveUserTheme);
+		} else {
+			htmlBlock.classList.add(userTheme);
+		}
+	}
+	setThemeClass()
+
+	function changeTheme() {
+		let currentTheme = htmlBlock.classList.contains("light") ? 'light' : 'dark';
+		let newTheme;
+
+		if (currentTheme === 'light') {
+			newTheme = 'dark';
+		} else if (currentTheme === 'dark') {
+			newTheme = 'light';
+		}
+
+		htmlBlock.classList.remove(currentTheme);
+		htmlBlock.classList.add(newTheme);
+		localStorage.setItem("user-theme", newTheme);
+	}
+}
+theme();; // СМЕНА ТЕМЫ САЙТА
+
 //< " СКРИПТЫ " >=============================================================================================================>//
 
 let isMobile = {
@@ -952,6 +994,8 @@ function loadsDigits() {
 function myDepositValue() {
 	const depositParent = document.querySelectorAll("[data-deposit-block]");
 
+	let ifLengthInput = 0; // ЕСЛИ ЗНАЧЕНИЕ БОЛЬШЕ УКАЗАННОГО, ТО КНОПКА СТАНОВИТСЯ АКТИВНОЙ
+
 	depositParent.forEach(main => {
 		const depositMax = main.querySelector("[data-deposit-max]");
 		const depositInput = main.querySelector("[data-deposit-input]");
@@ -960,35 +1004,26 @@ function myDepositValue() {
 			const myValue = main.querySelector("[data-deposit-my-value]");
 			const sendDeposit = main.querySelector("[data-deposit-send]");
 
-			function minValueInputDeposit() {
-				if (depositInput.value < minValueDeposit) {
-					sendDeposit.classList.add("_disabled");
-				}
-			}
-
-			function maxValueInputDeposit() {
-				if (depositInput.value > maxValueDeposit) {
-					sendDeposit.classList.add("_disabled");
-				}
-			}
-
 			depositInput.addEventListener("input", function () {
 				this.value = this.value.replace(/[^\d.,]/g, '');
 
-				sendDeposit.classList.remove("_disabled");
-
-				minValueInputDeposit();
-				maxValueInputDeposit();
+				if (depositInput.value.length > ifLengthInput) {
+					sendDeposit.classList.remove("_disabled");
+				} else {
+					sendDeposit.classList.add("_disabled");
+				}
 			});
 			depositMax.addEventListener("click", function () {
-				const item = Number(myValue.innerHTML);
+				const item = myValue.innerHTML;
+				if (depositInput.value != item) {
+					depositInput.value = item;
+				}
 
-				sendDeposit.classList.remove("_disabled");
-
-				item > maxValueDeposit ? depositInput.value = maxValueDeposit : depositInput.value = item
-
-				minValueInputDeposit();
-				maxValueInputDeposit();
+				if (depositInput.value.length > ifLengthInput) {
+					sendDeposit.classList.remove("_disabled");
+				} else {
+					sendDeposit.classList.add("_disabled");
+				}
 			});
 		}
 	});
@@ -1018,29 +1053,3 @@ function goToFaqs() {
 	});
 }
 goToFaqs();
-
-function footerSocialLinks() {
-	const footerLinks = document.querySelectorAll("[data-footer-social]");
-	footerLinks.forEach(link => {
-		const dropdown = link.nextElementSibling;
-
-		link.addEventListener("click", () => {
-			if (isMobile.any()) {
-				link.classList.toggle("_active");
-				dropdown.classList.toggle("_active");
-			}
-		});
-
-		document.addEventListener("click", (e) => {
-			const elementTarget = e.target;
-
-			if (isMobile.any()) {
-				if (!elementTarget.closest("[data-footer-social]") || !elementTarget.closest("[data-footer-social]").nextElementSibling) {
-					link.classList.remove("_active");
-					dropdown.classList.remove("_active");
-				}
-			}
-		});
-	});
-}
-footerSocialLinks()
