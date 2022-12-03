@@ -117,7 +117,7 @@
                   <img class="header-actions__theme-icon header-actions__theme-icon_dark" src="img/icon/dark.svg"
                      alt="dark">
                </button>
-               <button class="header-actions__button header-button" data-popup-open data-popup="prompt" type="button">
+               <button class="header-actions__button header-button" data-popup-open data-popup="connect" type="button">
                   <i class="header-button__icon">
                      <img src="img/icon/wallet.svg" width="18" height="17" alt="wallet">
                   </i>
@@ -449,6 +449,38 @@
 					</button>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="modal-wrapper__popup popup" id="connect">
+		<div class="popup__body popup__body_deposit">
+			<div class="popup__top">
+				<div class="popup__title">
+					Deposit USDT
+				</div>
+				<button class="popup__close" data-popup-close type="button"></button>
+			</div>
+			<form class="popup__content popup-connect" action="#">
+				<div class="popup-connect__column">
+					<button class="popup-connect__button" name="metamask" type="submit">
+						<strong class="popup-connect__text">Metamask</strong>
+						<i class="popup-connect__icon">
+							<img src="img/popup/connect/01.png" alt="popup-connect-01">
+						</i>
+					</button>
+					<button class="popup-connect__button" name="coinbase-wallet" type="submit">
+						<strong class="popup-connect__text">Coinbase Wallet</strong>
+						<i class="popup-connect__icon">
+							<img src="img/popup/connect/02.png" alt="popup-connect-02">
+						</i>
+					</button>
+					<button class="popup-connect__button" name="wallet-connect" type="submit">
+						<strong class="popup-connect__text">WalletConnect</strong>
+						<i class="popup-connect__icon">
+							<img src="img/popup/connect/03.png" alt="popup-connect-03">
+						</i>
+					</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>

@@ -1854,6 +1854,41 @@ body._lock-scroll {
   justify-content: center;
   align-items: center;
 }
+.popup-connect__column {
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+.popup-connect__button {
+  padding: 5px 18px;
+  min-height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--var-bg-color);
+  border-radius: 6px;
+  background-color: transparent;
+}
+@media (any-hover: hover) {
+  .popup-connect__button {
+    transition: border-color 0.1s ease 0s;
+  }
+  .popup-connect__button:hover {
+    border-color: #019EF7;
+  }
+}
+.popup-connect__text {
+  /* Если меньше контейнера */
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 120%;
+  color: var(--color-title);
+}
+@media (max-width: 1265px) {
+  .popup-connect__text {
+    font-size: calc(13px + 2 * ((100vw - 320px) / 945));
+  }
+}
 .preloader {
   width: 100vw;
   height: 100vh;
