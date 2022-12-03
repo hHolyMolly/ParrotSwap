@@ -1897,6 +1897,13 @@ body._lock-scroll {
     font-size: calc(13px + 2 * ((100vw - 320px) / 945));
   }
 }
+.popup-connect__icon {
+  max-width: 29px;
+}
+.popup-connect__icon img {
+  max-width: 100%;
+}
+
 .preloader {
   width: 100vw;
   height: 100vh;
