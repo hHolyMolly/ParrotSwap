@@ -645,7 +645,9 @@ body._lock-scroll {
 .header-actions__theme-icon {
   width: 18px;
   height: 18px;
-  transition: fill 0.3s ease 0s;
+}
+.header-actions__theme-icon path {
+  transition: fill 0.2s ease 0s;
 }
 .header-actions__theme-icon_light {
   display: none;
@@ -1213,15 +1215,12 @@ body._lock-scroll {
 }
 @media (max-width: 1385px) {
   .footer-socials__dropdown {
-    margin-right: 5px;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .footer-socials__dropdown:before {
     left: 50%;
     transform: translateX(-50%);
-  }
-  .footer-socials__dropdown:after {
-    display: none;
   }
 }
 @media (any-hover: hover) {
