@@ -961,9 +961,7 @@ function myDepositValue() {
 			const sendDeposit = main.querySelector("[data-deposit-send]");
 
 			function minValueInputDeposit() {
-				if (depositInput.value >= minValueDeposit) {
-					sendDeposit.classList.remove("_disabled");
-				} else {
+				if (depositInput.value < minValueDeposit) {
 					sendDeposit.classList.add("_disabled");
 				}
 			}
@@ -971,19 +969,21 @@ function myDepositValue() {
 			function maxValueInputDeposit() {
 				if (depositInput.value > maxValueDeposit) {
 					sendDeposit.classList.add("_disabled");
-				} else {
-					sendDeposit.classList.remove("_disabled");
 				}
 			}
 
 			depositInput.addEventListener("input", function () {
 				this.value = this.value.replace(/[^\d.,]/g, '');
 
+				sendDeposit.classList.remove("_disabled");
+
 				minValueInputDeposit();
 				maxValueInputDeposit();
 			});
 			depositMax.addEventListener("click", function () {
 				const item = Number(myValue.innerHTML);
+
+				sendDeposit.classList.remove("_disabled");
 
 				item > maxValueDeposit ? depositInput.value = maxValueDeposit : depositInput.value = item
 
