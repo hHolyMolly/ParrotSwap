@@ -198,7 +198,7 @@ html:not(.light) body .faqs-prompt__icon, html:not(.dark) body .faqs-prompt__ico
   background-color: #BEDEFB;
 }
 html:not(.light) body .modal-wrapper__popup, html:not(.dark) body .modal-wrapper__popup {
-  background-color: rgba(217, 217, 217, 0.6);
+  background-color: rgba(179, 179, 179, 0.3);
 }
 html:not(.light) body .popup-contact-prompt__icon, html:not(.dark) body .popup-contact-prompt__icon {
   background-color: rgba(241, 65, 109, 0.3);
@@ -279,7 +279,7 @@ html:not(.dark).light body .faqs-prompt__icon {
   background-color: #BEDEFB;
 }
 html:not(.dark).light body .modal-wrapper__popup {
-  background-color: rgba(217, 217, 217, 0.6);
+  background-color: rgba(179, 179, 179, 0.3);
 }
 html:not(.dark).light body .popup-contact-prompt__icon {
   background-color: rgba(241, 65, 109, 0.3);
@@ -638,10 +638,14 @@ body._lock-scroll {
   .header-actions__theme:hover {
     background-color: var(--bg-menu-item);
   }
+  .header-actions__theme:hover .header-actions__theme-icon path {
+    fill: #019EF7;
+  }
 }
 .header-actions__theme-icon {
   width: 18px;
   height: 18px;
+  transition: fill 0.2s ease 0s;
 }
 .header-actions__theme-icon_light {
   display: none;
@@ -1145,7 +1149,7 @@ body._lock-scroll {
 .footer-socials__text {
   transition: color 0.2s ease 0s;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 123.0769230769%;
   color: var(--footer-links-color);
 }
@@ -1158,7 +1162,7 @@ body._lock-scroll {
   /* Если меньше контейнера */
   padding: 12px;
   margin-bottom: 10px;
-  max-width: 380px;
+  max-width: 110px;
   min-width: 110px;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -1209,11 +1213,12 @@ body._lock-scroll {
 }
 @media (max-width: 1385px) {
   .footer-socials__dropdown {
-    margin-right: -23px;
+    margin-right: 5px;
     right: 0;
   }
   .footer-socials__dropdown:before {
-    right: 25px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .footer-socials__dropdown:after {
     display: none;
@@ -1549,7 +1554,7 @@ body._lock-scroll {
 }
 .popup__button_send._disabled {
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 .popup__contact {
   display: flex;
@@ -2277,11 +2282,11 @@ body._lock-scroll {
 }
 .info-row__button_green .info-row__button-text {
   /* Если меньше контейнера */
-  font-size: 16px;
+  font-size: 15px;
 }
 @media (max-width: 1265px) {
   .info-row__button_green .info-row__button-text {
-    font-size: calc(13px + 3 * ((100vw - 320px) / 945));
+    font-size: calc(13px + 2 * ((100vw - 320px) / 945));
   }
 }
 @media (any-hover: hover) {
