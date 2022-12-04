@@ -1,192 +1,904 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
    <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<script src="js/my-theme.js"></script>
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-   <title> AB - Portfolio website </title>
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+   <title> ParrotSwap </title>
 </head>
 
 <body>
    <div class="wrapper">
-      <header class="header">
+      <div class="content">
+         <header class="header">
    <div class="header__wrapper _lock-padding">
       <div class="_container">
          <div class="header__body">
-            <nav class="header__menu header-menu">
-               <button class="header__burger _burger" id="menu-open"><span></span></button>
-               <div class="header-menu__body" id="menu-content">
-                  <ul class="header-menu__list">
-                     <li class="header-menu__list-item">
-                        <a class="header-menu__list-link" href="index.html"> Home </a>
-                     </li>
-                     <li class="header-menu__list-item">
-                        <a class="header-menu__list-link" href="about.html"> About Me </a>
-                     </li>
-                     <li class="header-menu__list-item">
-                        <a class="header-menu__list-link" href="research.html"> Research </a>
-                     </li>
-                  </ul>
+            <div class="header__logo-wrapper">
+               <button class="menu__burger _burger" id="menu-open" type="button"><span></span></button>
+               <a class="header__logo header-logo" href="index.html">
+                  <i class="header-logo__icon">
+                     <img src="img/logo.png" width="40" height="46" alt="header-logo">
+                  </i>
+                  <span class="header-logo__text">ParrotSwap</span>
+               </a>
+            </div>
+            <nav class="header__menu menu" id="header-menu">
+               <div class="menu__wrapper" id="menu-wrapper"></div>
+               <div class="menu__body menu-body" id="menu-content">
+                  <div class="menu-body__top menu-top">
+                     <a class="menu-top__logo menu-logo" href="index.html">
+                        <i class="menu-logo__icon">
+                           <img src="img/logo.png" width="40" height="46" alt="header-logo">
+                        </i>
+                        <span class="menu-logo__text">ParrotSwap</span>
+                     </a>
+                     <button class="menu-top__close _close" id="menu-close" type="button"></button>
+                  </div>
+                  <div class="menu-content__content menu-content">
+                     <ul class="menu-content__list">
+                        <li class="menu-content__list-item">
+                           <a class="menu-content__list-link" id="menu-01" href="index.html">Home</a>
+                        </li>
+                        <li class="menu-content__list-item">
+                           <a class="menu-content__list-link" id="menu-02" href="#">Dashboard</a>
+                        </li>
+                        <li class="menu-content__list-item">
+                           <a class="menu-content__list-link" id="menu-03" href="#">Audit</a>
+                        </li>
+                        <li class="menu-content__list-item">
+                           <a class="menu-content__list-link" id="menu-04" href="faqs.html">FAQ</a>
+                        </li>
+                     </ul>
+                  </div>
                </div>
             </nav>
-            <div class="header__row">
-               <a class="header__logo" href="index.html"> <span>A.</span>B. </a>
-            </div>
             <div class="header__actions header-actions">
-               <a class="header-actions__item" href="mailto:aidana.baltabekova@nu.edu.kz">
-                  <svg class="header-actions__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
+               <div class="header-actions__language header-language" data-da=".menu-content__content,552.2,1"
+                  data-select>
+                  <button class="header-language__button" data-select-button data-select-lang type="button">
+                     <i class="header-language__selected-icon">
+                        <img src="img/icon/language/en.svg" width="18" height="18" alt="English">
+                     </i>
+                     <span class="header-language__selected-text" data-select-button-text id="e-lang-en">English</span>
+                  </button>
+                  <div class="header-language__dropdown header-language-dropdown" data-select-dropdown>
+                     <ul class="header-language-dropdown__list">
+                        <li class="header-language-dropdown__list-item" data-select-item>
+                           <i class="header-language-dropdown__icon">
+                              <img src="img/icon/language/en.svg" width="18" height="18" alt="English">
+                           </i>
+                           <span class="header-language-dropdown__text" data-language-change
+                              id="e-lang-en">English</span>
+                        </li>
+                        <li class="header-language-dropdown__list-item" data-select-item>
+                           <i class="header-language-dropdown__icon">
+                              <img src="img/icon/language/spain.svg" width="18" height="18" alt="Spanish">
+                           </i>
+                           <span class="header-language-dropdown__text" data-language-change
+                              id="e-lang-spa">Spanish</span>
+                        </li>
+                        <li class="header-language-dropdown__list-item" data-select-item>
+                           <i class="header-language-dropdown__icon">
+                              <img src="img/icon/language/germany.svg" width="18" height="18" alt="German">
+                           </i>
+                           <span class="header-language-dropdown__text" data-language-change
+                              id="e-lang-de">German</span>
+                        </li>
+                        <li class="header-language-dropdown__list-item" data-select-item>
+                           <i class="header-language-dropdown__icon">
+                              <img src="img/icon/language/japan.svg" width="18" height="18" alt="Japanese">
+                           </i>
+                           <span class="header-language-dropdown__text" data-language-change
+                              id="e-lang-ja">Japanese</span>
+                        </li>
+                        <li class="header-language-dropdown__list-item" data-select-item>
+                           <i class="header-language-dropdown__icon">
+                              <img src="img/icon/language/france.svg" width="18" height="18" loading="lazy"
+                                 alt="French">
+                           </i>
+                           <span class="header-language-dropdown__text" data-language-change
+                              id="e-lang-fr">French</span>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <button class="header-actions__theme" id="theme-website" type="button">
+                  <svg class="header-actions__theme-icon header-actions__theme-icon_light" width="18" height="18"
+                     viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path
-                        d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
-                        stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-                     <path d="M22 6L12 13L2 6" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        d="M13.5 8.83231C13.5 9.971 13.0259 11.0631 12.182 11.8682C11.3381 12.6734 10.1935 13.1258 9 13.1258C7.80653 13.1258 6.66193 12.6734 5.81802 11.8682C4.97411 11.0631 4.5 9.971 4.5 8.83231C4.5 7.69361 4.97411 6.60155 5.81802 5.79637C6.66193 4.99119 7.80653 4.53885 9 4.53885C10.1935 4.53885 11.3381 4.99119 12.182 5.79637C13.0259 6.60155 13.5 7.69361 13.5 8.83231ZM9 0.245392C9.14918 0.245392 9.29226 0.301935 9.39775 0.402582C9.50324 0.50323 9.5625 0.639737 9.5625 0.782074V2.9288C9.5625 3.07114 9.50324 3.20765 9.39775 3.30829C9.29226 3.40894 9.14918 3.46548 9 3.46548C8.85082 3.46548 8.70774 3.40894 8.60225 3.30829C8.49676 3.20765 8.4375 3.07114 8.4375 2.9288V0.782074C8.4375 0.639737 8.49676 0.50323 8.60225 0.402582C8.70774 0.301935 8.85082 0.245392 9 0.245392V0.245392ZM9 14.1991C9.14918 14.1991 9.29226 14.2557 9.39775 14.3563C9.50324 14.457 9.5625 14.5935 9.5625 14.7358V16.8825C9.5625 17.0249 9.50324 17.1614 9.39775 17.262C9.29226 17.3627 9.14918 17.4192 9 17.4192C8.85082 17.4192 8.70774 17.3627 8.60225 17.262C8.49676 17.1614 8.4375 17.0249 8.4375 16.8825V14.7358C8.4375 14.5935 8.49676 14.457 8.60225 14.3563C8.70774 14.2557 8.85082 14.1991 9 14.1991ZM18 8.83231C18 8.97464 17.9407 9.11115 17.8352 9.2118C17.7298 9.31245 17.5867 9.36899 17.4375 9.36899H15.1875C15.0383 9.36899 14.8952 9.31245 14.7898 9.2118C14.6843 9.11115 14.625 8.97464 14.625 8.83231C14.625 8.68997 14.6843 8.55346 14.7898 8.45281C14.8952 8.35217 15.0383 8.29562 15.1875 8.29562H17.4375C17.5867 8.29562 17.7298 8.35217 17.8352 8.45281C17.9407 8.55346 18 8.68997 18 8.83231ZM3.375 8.83231C3.375 8.97464 3.31574 9.11115 3.21025 9.2118C3.10476 9.31245 2.96168 9.36899 2.8125 9.36899H0.5625C0.413316 9.36899 0.270242 9.31245 0.164752 9.2118C0.0592632 9.11115 0 8.97464 0 8.83231C0 8.68997 0.0592632 8.55346 0.164752 8.45281C0.270242 8.35217 0.413316 8.29562 0.5625 8.29562H2.8125C2.96168 8.29562 3.10476 8.35217 3.21025 8.45281C3.31574 8.55346 3.375 8.68997 3.375 8.83231ZM15.3641 2.76028C15.4696 2.86093 15.5288 2.99741 15.5288 3.13972C15.5288 3.28203 15.4696 3.41851 15.3641 3.51915L13.7734 5.03796C13.7211 5.08779 13.659 5.1273 13.5907 5.15424C13.5224 5.18118 13.4492 5.19502 13.3753 5.19497C13.226 5.19487 13.0829 5.1382 12.9774 5.03743C12.9252 4.98753 12.8838 4.9283 12.8556 4.86314C12.8273 4.79797 12.8128 4.72813 12.8129 4.65761C12.813 4.5152 12.8724 4.37865 12.978 4.27802L14.5687 2.76028C14.6742 2.65967 14.8173 2.60315 14.9664 2.60315C15.1156 2.60315 15.2586 2.65967 15.3641 2.76028ZM5.022 12.6277C5.12745 12.7284 5.18669 12.8648 5.18669 13.0072C5.18669 13.1495 5.12745 13.2859 5.022 13.3866L3.43125 14.9043C3.32516 15.0021 3.18307 15.0562 3.03559 15.055C2.8881 15.0537 2.74702 14.9973 2.64273 14.8978C2.53843 14.7983 2.47928 14.6637 2.478 14.523C2.47671 14.3822 2.53341 14.2467 2.63587 14.1455L4.22662 12.6277C4.33211 12.5271 4.47516 12.4706 4.62431 12.4706C4.77347 12.4706 4.91652 12.5271 5.022 12.6277ZM15.3641 14.9043C15.2586 15.0049 15.1156 15.0615 14.9664 15.0615C14.8173 15.0615 14.6742 15.0049 14.5687 14.9043L12.978 13.3866C12.8755 13.2854 12.8188 13.1498 12.8201 13.0091C12.8214 12.8684 12.8806 12.7338 12.9849 12.6343C13.0891 12.5348 13.2302 12.4783 13.3777 12.4771C13.5252 12.4759 13.6673 12.53 13.7734 12.6277L15.3641 14.1455C15.4696 14.2461 15.5288 14.3826 15.5288 14.5249C15.5288 14.6672 15.4696 14.8037 15.3641 14.9043ZM5.022 5.03796C4.91652 5.13858 4.77347 5.1951 4.62431 5.1951C4.47516 5.1951 4.33211 5.13858 4.22662 5.03796L2.63587 3.51915C2.58215 3.46965 2.5393 3.41043 2.50982 3.34495C2.48034 3.27947 2.46482 3.20905 2.46417 3.13779C2.46352 3.06653 2.47775 2.99586 2.50604 2.9299C2.53432 2.86394 2.57609 2.80402 2.6289 2.75363C2.68172 2.70324 2.74452 2.66339 2.81365 2.63641C2.88278 2.60942 2.95685 2.59584 3.03154 2.59646C3.10623 2.59708 3.18004 2.61189 3.24867 2.64001C3.31729 2.66814 3.37936 2.70903 3.43125 2.76028L5.022 4.27802C5.07438 4.32787 5.11594 4.3871 5.1443 4.4523C5.17266 4.5175 5.18726 4.5874 5.18726 4.65799C5.18726 4.72858 5.17266 4.79848 5.1443 4.86369C5.11594 4.92889 5.07438 4.98811 5.022 5.03796Z"
+                        fill="#A1A5B7" />
                   </svg>
-               </a>
-               <a class="header-actions__item" href="tel:+77058609500">
-                  <svg class="header-actions__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                     <path
-                        d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1469 21.5901 20.9046 21.7335 20.6408 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77383 17.3147 6.72534 15.2662 5.19 12.85C3.49998 10.2412 2.44824 7.271 2.12 4.18C2.09501 3.90347 2.12788 3.62476 2.2165 3.36163C2.30513 3.09849 2.44757 2.85669 2.63477 2.65162C2.82196 2.44655 3.04981 2.28271 3.30379 2.17052C3.55778 2.05834 3.83234 2.00026 4.11 2H7.11C7.59531 1.99523 8.06579 2.16708 8.43376 2.48353C8.80173 2.79999 9.04208 3.23945 9.11 3.72C9.23662 4.68007 9.47145 5.62273 9.81 6.53C9.94455 6.88793 9.97366 7.27692 9.89391 7.65088C9.81415 8.02485 9.62886 8.36811 9.36 8.64L8.09 9.91C9.51356 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9752 14.1859 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z"
-                        stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                  <svg class="header-actions__theme-icon header-actions__theme-icon_dark" width="18" height="18"
+                     viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <g clip-path="url(#clip0_39_928)">
+                        <path
+                           d="M6.75 0.312659C6.85982 0.446098 6.92709 0.609402 6.94313 0.781471C6.95918 0.953541 6.92325 1.12647 6.84 1.27791C6.18959 2.47207 5.84993 3.81061 5.85225 5.17041C5.85225 9.69403 9.54 13.357 14.085 13.357C14.6779 13.357 15.255 13.2952 15.8096 13.177C15.9796 13.1402 16.1567 13.1543 16.3188 13.2175C16.4809 13.2807 16.6207 13.3903 16.7209 13.5325C16.8266 13.6804 16.8805 13.8591 16.8742 14.0408C16.8679 14.2225 16.8017 14.397 16.686 14.5372C15.8036 15.621 14.6905 16.4943 13.4278 17.0934C12.1651 17.6924 10.7846 18.0021 9.387 17.9999C4.20075 17.9999 0 13.8217 0 8.67366C0 4.79916 2.37825 1.47591 5.7645 0.0674086C5.93318 -0.0038806 6.12044 -0.0185124 6.29814 0.0257112C6.47585 0.0699347 6.63441 0.170626 6.75 0.312659Z"
+                           fill="#565772" />
+                        <path
+                           d="M12.1432 3.54131C12.1593 3.49259 12.1904 3.4502 12.232 3.42015C12.2736 3.3901 12.3236 3.37393 12.3749 3.37393C12.4262 3.37393 12.4762 3.3901 12.5178 3.42015C12.5595 3.4502 12.5905 3.49259 12.6067 3.54131L13.042 4.84856C13.2367 5.43131 13.6934 5.88806 14.2762 6.08269L15.5834 6.51806C15.6321 6.53419 15.6745 6.56527 15.7046 6.60687C15.7346 6.64848 15.7508 6.69849 15.7508 6.74981C15.7508 6.80113 15.7346 6.85115 15.7046 6.89275C15.6745 6.93435 15.6321 6.96543 15.5834 6.98156L14.2762 7.41694C13.9887 7.51269 13.7276 7.67407 13.5134 7.88828C13.2992 8.10249 13.1378 8.36365 13.042 8.65106L12.6067 9.95831C12.5905 10.007 12.5595 10.0494 12.5178 10.0795C12.4762 10.1095 12.4262 10.1257 12.3749 10.1257C12.3236 10.1257 12.2736 10.1095 12.232 10.0795C12.1904 10.0494 12.1593 10.007 12.1432 9.95831L11.7078 8.65106C11.612 8.36365 11.4506 8.10249 11.2364 7.88828C11.0222 7.67407 10.7611 7.51269 10.4737 7.41694L9.16641 6.98156C9.11769 6.96543 9.07529 6.93435 9.04525 6.89275C9.0152 6.85115 8.99902 6.80113 8.99902 6.74981C8.99902 6.69849 9.0152 6.64848 9.04525 6.60687C9.07529 6.56527 9.11769 6.53419 9.16641 6.51806L10.4737 6.08269C10.7611 5.98693 11.0222 5.82555 11.2364 5.61134C11.4506 5.39713 11.612 5.13597 11.7078 4.84856L12.1432 3.54131ZM15.5958 0.111186C15.6069 0.0791529 15.6277 0.0513762 15.6553 0.0317176C15.6829 0.012059 15.716 0.00149536 15.7499 0.00149536C15.7838 0.00149536 15.8169 0.012059 15.8445 0.0317176C15.8721 0.0513762 15.8929 0.0791529 15.904 0.111186L16.1943 0.981936C16.3237 1.37119 16.6285 1.67606 17.0178 1.80544L17.8885 2.09569C17.9206 2.10679 17.9483 2.1276 17.968 2.15522C17.9877 2.18285 17.9982 2.21591 17.9982 2.24981C17.9982 2.28371 17.9877 2.31678 17.968 2.3444C17.9483 2.37202 17.9206 2.39283 17.8885 2.40394L17.0178 2.69419C16.826 2.758 16.6517 2.86565 16.5087 3.0086C16.3658 3.15155 16.2581 3.32586 16.1943 3.51769L15.904 4.38844C15.8929 4.42047 15.8721 4.44825 15.8445 4.4679C15.8169 4.48756 15.7838 4.49813 15.7499 4.49813C15.716 4.49813 15.6829 4.48756 15.6553 4.4679C15.6277 4.44825 15.6069 4.42047 15.5958 4.38844L15.3055 3.51769C15.2417 3.32586 15.1341 3.15155 14.9911 3.0086C14.8482 2.86565 14.6739 2.758 14.482 2.69419L13.6113 2.40394C13.5793 2.39283 13.5515 2.37202 13.5318 2.3444C13.5122 2.31678 13.5016 2.28371 13.5016 2.24981C13.5016 2.21591 13.5122 2.18285 13.5318 2.15522C13.5515 2.1276 13.5793 2.10679 13.6113 2.09569L14.482 1.80544C14.8713 1.67606 15.1762 1.37119 15.3055 0.981936L15.5958 0.112311V0.111186Z"
+                           fill="#565772" />
+                     </g>
+                     <defs>
+                        <clipPath id="clip0_39_928">
+                           <rect width="18" height="18" fill="white" />
+                        </clipPath>
+                     </defs>
                   </svg>
-               </a>
+               </button>
+               <button class="header-actions__button header-button" data-popup-open data-popup="connect" type="button">
+                  <i class="header-button__icon">
+                     <img src="img/icon/wallet.svg" width="18" height="17" alt="wallet">
+                  </i>
+                  <span class="header-button__text">Dashboard</span>
+               </button>
             </div>
          </div>
       </div>
    </div>
 </header>
-      <main class="page">
-         <section class="page__start start">
-            <div class="_container">
-               <div class="start__body">
-                  <div class="start__inner">
-                     <h1 class="start__title _title wow animate__animated animate__fadeInUp" data-wow-duration="0.6s">
-                        Hi, I am a senior student majoring <span>in Biological Sciences.</span>
-                     </h1>
-                     <p class="start__text wow animate__animated animate__fadeInUp" data-wow-duration="0.6s"
-                        data-wow-delay="0.2s">
-                        I am also currently working as a research assistant in the laboratory of Dr. Dos Sarbassov on
-                        the project “Targeting KRAS mutant colorectal cancer by inducing a cytotoxic oxidative stress”.
-                     </p>
-                     <div class="start__item">
-                        <a class="start__more button wow animate__animated animate__fadeInUp" data-wow-duration="0.6s"
-                           data-wow-delay="0.4s" href="about.html">
-                           Read More
-                        </a>
-                        <div class="start__icons start-icons">
-                           <a class="start-icons__item wow animate__animated animate__fadeInUp" data-wow-duration="0.6s"
-                              data-wow-delay="0.5s" target="_blank"
-                              href="https://www.linkedin.com/in/aidana-baltabekova-869438214/">
-                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path
-                                    d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8V8Z"
-                                    stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-                                 <path d="M6 9H2V21H6V9Z" stroke="black" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                 <path
-                                    d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z"
-                                    stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-                              </svg>
-                           </a>
-                           <a class="start-icons__item wow animate__animated animate__fadeInUp" data-wow-duration="0.6s"
-                              data-wow-delay="0.6s" target="_blank"
-                              href="https://www.facebook.com/profile.php?id=100004871496065">
-                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path
-                                    d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z"
-                                    stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-                              </svg>
-                           </a>
+         <main class="page">
+            <section class="page__info info">
+               <div class="_container">
+                  <div class="info__body">
+                     <div class="info__row info__row_little info-row">
+                        <div class="info-row__header info-row-header">
+                           <h4 class="info-row-header__title info-row-header__title_green">
+                              Прибыль в сутки: 0.8% - 1.5%
+                           </h4>
+                           <div class="info-row-header__prompt info-row-prompt" data-prompt>
+                              <i class="info-row-prompt__icon" data-prompt-button>?</i>
+                              <div class="info-row-prompt__dropdown">
+                                 Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                 Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                                 Lorem ipsum dolor sit amet.
+                                 <a href="faqs.html#go-to-faqs">link</a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="info-row__content">
+                           <div class="info-row__balance info-row-balance">
+                              <h5 class="info-row-balance__title">Balance contract</h5>
+                              <strong class="info-row-balance__price">
+                                 <span class="info-row-balance__price-item" id="first">$0</span>
+                              </strong>
+                           </div>
+                           <div class="info-row__buttons">
+                              <a class="info-row__button header-actions__button header-button" href="#">
+                                 <i class="header-button__icon">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                       <path
+                                          d="M4.15604 9.67897C4.15606 9.56713 4.17813 9.4564 4.22099 9.35313C4.26384 9.24986 4.32663 9.15609 4.40575 9.0772C4.48488 8.99831 4.57877 8.93586 4.68205 8.89343C4.78534 8.851 4.89597 8.82942 5.00759 8.82994L6.41937 8.83456C6.64447 8.83456 6.86035 8.92416 7.01952 9.08363C7.1787 9.2431 7.26812 9.45939 7.26812 9.68491V15.0336C7.42712 14.9864 7.63062 14.9361 7.85454 14.8832C8.00968 14.8467 8.14795 14.7587 8.24691 14.6335C8.34588 14.5084 8.39975 14.3534 8.39978 14.1937V7.55945C8.39978 7.33391 8.4892 7.11761 8.64837 6.95811C8.80753 6.79861 9.02341 6.70899 9.24853 6.70894H10.6646C10.8897 6.70899 11.1056 6.79861 11.2648 6.95811C11.4239 7.11761 11.5133 7.33391 11.5133 7.55945V13.7171C11.5133 13.7171 11.8676 13.5735 12.2125 13.4275C12.3406 13.3732 12.45 13.2823 12.5269 13.1662C12.6038 13.05 12.6449 12.9137 12.645 12.7743V5.4335C12.645 5.20801 12.7344 4.99174 12.8935 4.83228C13.0527 4.67281 13.2685 4.5832 13.4936 4.58316H14.9082C15.1331 4.58337 15.3488 4.67306 15.5078 4.83251C15.6668 4.99196 15.7561 5.20812 15.7561 5.4335V11.4784C16.9825 10.5879 18.2254 9.51686 19.2117 8.22904C19.3548 8.0421 19.4495 7.82259 19.4873 7.59007C19.5252 7.35756 19.505 7.11927 19.4286 6.89648C18.972 5.58045 18.2462 4.3744 17.2977 3.35552C16.3492 2.33663 15.1989 1.52734 13.9203 0.979435C12.6417 0.43153 11.263 0.157075 9.87245 0.173635C8.48191 0.190195 7.11013 0.497403 5.84489 1.0756C4.57965 1.6538 3.44882 2.49026 2.52476 3.53144C1.6007 4.57263 0.903763 5.79562 0.47854 7.12215C0.0533171 8.44868 -0.090823 9.84954 0.0553425 11.2351C0.201508 12.6206 0.634761 13.9603 1.32738 15.1685C1.44804 15.3769 1.62558 15.5465 1.83911 15.6573C2.05265 15.7682 2.29332 15.8156 2.53286 15.7942C2.80045 15.7706 3.13362 15.7372 3.52974 15.6907C3.70214 15.671 3.8613 15.5885 3.97691 15.4589C4.09253 15.3293 4.15652 15.1616 4.1567 14.9877V9.67897"
+                                          fill="#ffffff" />
+                                       <path
+                                          d="M4.12585 18.2569C5.61692 19.3437 7.37901 19.996 9.21715 20.1417C11.0553 20.2874 12.8978 19.9208 14.5409 19.0825C16.184 18.2442 17.5636 16.9668 18.5271 15.3917C19.4905 13.8165 20.0003 12.0051 20 10.1577C20 9.9266 19.9893 9.69912 19.9739 9.47229C16.3221 14.9291 9.5792 17.4802 4.12585 18.2569Z"
+                                          fill="#ffffff" />
+                                    </svg>
+                                 </i>
+                                 <span class="info-row__button-text">Check contract</span>
+                              </a>
+                              <button class="info-row__button info-row__button_green" type="button" data-popup-open
+                                 data-popup="deposit">
+                                 <span class="info-row__button-text">Deposit</span>
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="info__row info-row">
+                        <div class="info-row__header info-row-header">
+                           <h4 class="info-row-header__title info-row-header__title_blue">
+                              Last wallet address: 0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                           </h4>
+                           <div class="info-row-header__prompt info-row-prompt" data-prompt>
+                              <i class="info-row-prompt__icon" data-prompt-button>?</i>
+                              <div class="info-row-prompt__dropdown">
+                                 Lorem ipsum dolor sit amet.
+                              </div>
+                           </div>
+                        </div>
+                        <div class="info-row__content">
+                           <div class="info-row__balance info-row-balance">
+                              <h5 class="info-row-balance__title">Bonus balance </h5>
+                              <strong class="info-row-balance__price">
+                                 <span class="info-row-balance__price-item" id="second">$0</span>
+                              </strong>
+                           </div>
+                           <div class="info-row__timer info-row-timer">
+                              <ul class="info-row-timer__list">
+                                 <li class="info-row-timer__item">
+                                    <div class="info-row-timer__number">
+                                       <span class="info-row-timer__number-value" id="hours">00</span>
+                                    </div>
+                                    <span class="info-row-timer__text">Hours</span>
+                                 </li>
+                                 <li class="info-row-timer__item">
+                                    <div class="info-row-timer__number">:</div>
+                                 </li>
+                                 <li class="info-row-timer__item">
+                                    <div class="info-row-timer__number">
+                                       <span class="info-row-timer__number-value" id="minutes">00</span>
+                                    </div>
+                                    <span class="info-row-timer__text">minutes</span>
+                                 </li>
+                                 <li class="info-row-timer__item">
+                                    <div class="info-row-timer__number">:</div>
+                                 </li>
+                                 <li class="info-row-timer__item">
+                                    <div class="info-row-timer__number">
+                                       <span class="info-row-timer__number-value" id="seconds">00</span>
+                                    </div>
+                                    <span class="info-row-timer__text">seconds</span>
+                                 </li>
+                              </ul>
+                           </div>
                         </div>
                      </div>
                   </div>
-                  <div class="start__image _ibg wow animate__animated animate__fadeIn" data-wow-duration="0.6s"
-                     data-wow-delay="0.1s">
-                     <img src="img/page/start/image.jpg" alt="start-image">
-                  </div>
                </div>
-            </div>
-         </section>
-         <section class="page__research research">
-            <div class="_container">
-               <div class="research__body">
-                  <div class="research__header">
-                     <h2 class="research__title _title wow animate__animated animate__fadeInUp" data-wow-duration="0.7s"
-                        data-wow-delay="0.5s">
-                        Research<span>.</span>
-                     </h2>
-                     <p class="research__sub-title wow animate__animated animate__fadeInUp" data-wow-duration="0.9s"
-                        data-wow-delay="0.6s">
-                        Check out my research
-                     </p>
-                  </div>
-                  <div class="research__columns research-columns">
-                     <article class="research-columns__project">
-                        <h5 class="research-columns-row__title research-columns-row__title_mobile">
-                           The phytoplankton communities <span>in space & time</span>
-                        </h5>
-                        <div class="research-columns__images research-columns-images">
-                           <div class="research-columns-images__item _ibg wow animate__animated animate__fadeInUp"
-                              data-wow-duration="0.6s">
-                              <img src="img/page/research/01.jpg" alt="research-first">
+            </section>
+            <section class="page__statistics statistics" data-main>
+               <div class="_container">
+                  <div class="statistics__body">
+                     <div class="statistics__header statistics-header">
+                        <div class="statistics-header__row">
+                           <h2 class="statistics-header__title">Member Statistics</h2>
+                           <p class="statistics-header__text">Total transaction 582</p>
+                        </div>
+                        <a class="statistics-header__button info-row__button info-row__button_blue" href="#">
+                           <span class="info-row__button-text">View All Transaction</span>
+                        </a>
+                     </div>
+                     <div class="statistics__container">
+                        <div class="statistics__column statistics-column">
+                           <div class="statistics-column__header">
+                              <span class="statistics-general__text">
+                                 ID
+                              </span>
+                              <p class="statistics-general__text">
+                                 Address
+                              </p>
+                              <p class="statistics-general__text">
+                                 Date Time
+                              </p>
+                              <p class="statistics-general__text">
+                                 Value
+                              </p>
+                              <p class="statistics-general__text">
+                                 Profit
+                              </p>
+                              <p class="statistics-general__text">
+                                 Txn Hash
+                              </p>
                            </div>
-                           <div class="research-columns-images__item _ibg wow animate__animated animate__fadeInUp"
-                              data-wow-duration="0.6s">
-                              <img src="img/page/research/02.jpg" alt="research-second">
+                           <div class="statistics-column__general statistics-general" style="display: none;"
+                              data-sorting="8">
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    11
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue link-hover" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    11
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    11
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    11
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    11
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    11
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    11
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    11
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    22
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    22
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    22
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    22
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    22
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    22
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    22
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                              <div class="statistics-general__item" data-block>
+                                 <span class="statistics-general__text">
+                                    22
+                                 </span>
+                                 <p class="statistics-general__text">
+                                    0x2056D2BEE20F171b77940881D4edd2A2Ba622452
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    2022-11-12 7:09:38
+                                 </p>
+                                 <p class="statistics-general__text">
+                                    $4190.28
+                                 </p>
+                                 <p class="statistics-general__text statistics-general__text_green">
+                                    + $204.00
+                                 </p>
+                                 <a class="statistics-general__text statistics-general__text_blue" href="#">
+                                    0x508a1c...0d52uf
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="statistics-column__content" data-content-zone>
+                              <div class="statistics-column__content-item _active" data-content="1" data-free-content>
+                              </div>
                            </div>
                         </div>
-                        <div class="research-columns__row research-columns-row">
-                           <h5 class="research-columns-row__title research-columns-row__title_pc wow animate__animated animate__fadeInUp"
-                              data-wow-duration="0.6s">
-                              The phytoplankton communities <span>in space & time</span>
-                           </h5>
-                           <p class="research-columns-row__text wow animate__animated animate__fadeInUp"
-                              data-wow-duration="0.6s">
-                              An integrative approach to study salt lakes of Kazakhstanian arid and semiarid zones.
-                              Research assistantship on a contract under the supervision of Dr. Natalie Barteneva.
-                           </p>
-                           <a class="research-columns-row__more button wow animate__animated animate__fadeInUp"
-                              data-wow-duration="0.6s" href="research.html">
-                              Read More
-                           </a>
+                     </div>
+                     <div class="statistics-column__shell statistics-column-shell">
+                        <button class="statistics-column-shell__arrow left" data-left>
+                           <svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                 d="M4.01303 5.93216L0.816664 9.1285C0.50023 9.44491 0.500249 9.95792 0.816664 10.2743C1.13308 10.5907 1.64606 10.5907 1.96244 10.2743L6.19665 6.04018C6.49503 5.74187 6.49503 5.25819 6.19665 4.95988L1.96244 0.725676C1.64608 0.409312 1.13308 0.409312 0.816664 0.725676C0.500249 1.04216 0.500249 1.55515 0.816664 1.87151L4.01303 5.06789C4.25167 5.30653 4.25167 5.69351 4.01303 5.93216Z"
+                                 fill="#707386" />
+                           </svg>
+                        </button>
+                        <div class="statistics-column-shell__buttons" data-btns>
                         </div>
-                     </article>
+                        <button class="statistics-column-shell__arrow right" data-right>
+                           <svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                 d="M4.01303 5.93216L0.816664 9.1285C0.50023 9.44491 0.500249 9.95792 0.816664 10.2743C1.13308 10.5907 1.64606 10.5907 1.96244 10.2743L6.19665 6.04018C6.49503 5.74187 6.49503 5.25819 6.19665 4.95988L1.96244 0.725676C1.64608 0.409312 1.13308 0.409312 0.816664 0.725676C0.500249 1.04216 0.500249 1.55515 0.816664 1.87151L4.01303 5.06789C4.25167 5.30653 4.25167 5.69351 4.01303 5.93216Z"
+                                 fill="#707386" />
+                           </svg>
+                        </button>
+                     </div>
+                     <div data-pagination="4"></div>
+                     <button class="statistics-column-shell__button" data-billet></button>
                   </div>
                </div>
-            </div>
-         </section>
-      </main>
+            </section>
+         </main>
+      </div>
+      <div class="preloader" id="preloader">
+         <div class="preloader__icon">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+         </div>
+      </div>
       <footer class="footer">
    <div class="_container">
       <div class="footer__body">
-
+         <p class="footer__copy">
+            2022© <a class="footer__copy_grey" href="#">Keenthemes</a>
+         </p>
+         <div class="footer__socials footer-socials">
+            <ul class="footer-socials__list">
+               <li class="footer-socials__item">
+                  <a class="footer-socials__inner" href="#">
+                     <svg class="footer-socials__icon" width="23" height="18" viewBox="0 0 23 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           d="M6.95414 18C15.2855 18 19.8433 11.0706 19.8433 5.05924C19.8433 4.86384 19.8433 4.6666 19.8304 4.47304C20.7168 3.82892 21.4822 3.03186 22.0909 2.11901C21.2639 2.48615 20.3868 2.72723 19.4888 2.83425C20.434 2.26517 21.1413 1.37108 21.4794 0.318006C20.5908 0.848845 19.6182 1.22294 18.6037 1.42405C17.92 0.698325 17.0175 0.21854 16.0353 0.0586755C15.0531 -0.101189 14.0458 0.0677431 13.1687 0.53943C12.2916 1.01112 11.5934 1.75936 11.1818 2.66878C10.7703 3.57819 10.6681 4.59827 10.8912 5.57171C9.08974 5.48158 7.32734 5.01186 5.71858 4.1931C4.10982 3.37434 2.69072 2.22486 1.55353 0.819407C0.974346 1.82086 0.797023 3.00622 1.05765 4.13427C1.31829 5.26233 1.99728 6.24831 2.95647 6.89159C2.23539 6.86957 1.53011 6.67424 0.8998 6.32198V6.38649C0.89983 7.4366 1.26172 8.45437 1.9241 9.26714C2.58647 10.0799 3.50854 10.6376 4.53387 10.8457C3.8668 11.0279 3.16705 11.0543 2.48821 10.9231C2.77756 11.8251 3.33991 12.614 4.09695 13.18C4.85399 13.746 5.76802 14.0609 6.71174 14.0809C5.10601 15.3488 3.12087 16.0354 1.07792 16.0294C0.717663 16.029 0.357739 16.0075 0 15.9648C2.075 17.3001 4.48942 18.0067 6.95414 18Z"
+                           fill="#CFD2E3" />
+                     </svg>
+                     <span class="footer-socials__text">
+                        Twitter
+                     </span>
+                  </a>
+               </li>
+               <li class="footer-socials__item">
+                  <div class="footer-socials__inner" data-footer-social>
+                     <svg class="footer-socials__icon" width="22" height="18" viewBox="0 0 22 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                           d="M1.49231 7.74944C7.32191 5.20937 11.2095 3.53464 13.1549 2.72526C18.7098 0.414104 19.8629 0.0122372 20.6157 0.000367695C20.8921 -0.0061914 21.1634 0.0751483 21.3906 0.23267C21.5496 0.371273 21.6511 0.564124 21.6755 0.773579C21.716 1.03433 21.7274 1.29878 21.7094 1.56205C21.4076 4.72442 20.1053 12.3989 19.4423 15.9394C19.1626 17.4383 18.6115 17.9419 18.0757 17.9911C16.9141 18.0979 16.0324 17.223 14.9082 16.4854C13.1481 15.3323 12.1528 14.6202 10.4453 13.4875C8.46987 12.1869 9.75007 11.4714 10.876 10.3031C11.171 9.99616 16.2868 5.34163 16.3868 4.91941C16.3996 4.85742 16.3979 4.79329 16.3817 4.73208C16.3655 4.67088 16.3353 4.61427 16.2935 4.56672C16.2328 4.52751 16.1636 4.50337 16.0916 4.49629C16.0196 4.48921 15.947 4.49941 15.8798 4.52603C15.7035 4.56672 12.8915 6.42514 7.44401 10.1013C6.64479 10.6507 5.92188 10.918 5.27528 10.9033C4.55972 10.8881 3.18626 10.4998 2.16548 10.1674C0.914099 9.76046 -0.081239 9.54512 0.00523857 8.8533C0.0493252 8.49156 0.54501 8.12361 1.49231 7.74944Z"
+                           fill="#CFD2E3" />
+                     </svg>
+                     <span class="footer-socials__text">
+                        Telegram
+                     </span>
+                  </div>
+                  <ul class="footer-socials__dropdown footer-socials-dropdown">
+                     <li class="footer-socials-dropdown__header footer-socials-dropdown-header">
+                        <a class="footer-socials-dropdown__link" href="#">
+                           <i class="footer-socials-dropdown__icon">
+                              <img src="img/logo-second.png" width="15" height="15" alt="logo">
+                           </i>
+                           <span class="footer-socials-dropdown__text-link">Channel</span>
+                        </a>
+                     </li>
+                     <li class="footer-socials-dropdown__header">
+                        <span class="footer-socials-dropdown__text">
+                           Chats:
+                        </span>
+                     </li>
+                     <li class="footer-socials-dropdown__item">
+                        <a class="footer-socials-dropdown__link" href="#">
+                           <i class="footer-socials-dropdown__icon">
+                              <img src="img/icon/language/en.svg" width="18" height="18" alt="English">
+                           </i>
+                           <span class="footer-socials-dropdown__text-link">English</span>
+                        </a>
+                     </li>
+                     <li class="footer-socials-dropdown__item">
+                        <a class="footer-socials-dropdown__link" href="#">
+                           <i class="footer-socials-dropdown__icon">
+                              <img src="img/icon/language/en.svg" width="18" height="18" alt="English">
+                           </i>
+                           <span class="footer-socials-dropdown__text-link">Russian</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="footer-socials__item">
+                  <a class="footer-socials__inner" href="#">
+                     <svg class="footer-socials__icon" width="23" height="18" viewBox="0 0 23 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           d="M6.95414 18C15.2855 18 19.8433 11.0706 19.8433 5.05924C19.8433 4.86384 19.8433 4.6666 19.8304 4.47304C20.7168 3.82892 21.4822 3.03186 22.0909 2.11901C21.2639 2.48615 20.3868 2.72723 19.4888 2.83425C20.434 2.26517 21.1413 1.37108 21.4794 0.318006C20.5908 0.848845 19.6182 1.22294 18.6037 1.42405C17.92 0.698325 17.0175 0.21854 16.0353 0.0586755C15.0531 -0.101189 14.0458 0.0677431 13.1687 0.53943C12.2916 1.01112 11.5934 1.75936 11.1818 2.66878C10.7703 3.57819 10.6681 4.59827 10.8912 5.57171C9.08974 5.48158 7.32734 5.01186 5.71858 4.1931C4.10982 3.37434 2.69072 2.22486 1.55353 0.819407C0.974346 1.82086 0.797023 3.00622 1.05765 4.13427C1.31829 5.26233 1.99728 6.24831 2.95647 6.89159C2.23539 6.86957 1.53011 6.67424 0.8998 6.32198V6.38649C0.89983 7.4366 1.26172 8.45437 1.9241 9.26714C2.58647 10.0799 3.50854 10.6376 4.53387 10.8457C3.8668 11.0279 3.16705 11.0543 2.48821 10.9231C2.77756 11.8251 3.33991 12.614 4.09695 13.18C4.85399 13.746 5.76802 14.0609 6.71174 14.0809C5.10601 15.3488 3.12087 16.0354 1.07792 16.0294C0.717663 16.029 0.357739 16.0075 0 15.9648C2.075 17.3001 4.48942 18.0067 6.95414 18Z"
+                           fill="#CFD2E3" />
+                     </svg>
+                     <span class="footer-socials__text">
+                        Twitter
+                     </span>
+                  </a>
+               </li>
+            </ul>
+         </div>
       </div>
    </div>
 </footer>
       <div class="modal-wrapper" id="modal-wrapper" data-popup-speed="500">
-
-</div>
-
-<!-- <div class="modal-wrapper__popup popup" id="Имя попапа">
-	<div class="popup__body">
-		<div class="popup__top">
-			<div class="popup__title">
-				Заголовок
+	<div class="modal-wrapper__popup popup" id="contact-us">
+		<div class="popup__body popup__body_contact">
+			<div class="popup__top">
+				<div class="popup__title">
+					Contact Us
+				</div>
+				<button class="popup__close" data-popup-close type="button"></button>
 			</div>
-			<button class="popup__close _close" data-popup-close type="button"></button>
-		</div>
-		<div class="popup__content">
-			Содержимое попапа
+			<div class="popup__content" style="padding-top: 15px;">
+				<div class="popup__contact popup-contact">
+					<div class="popup-contact__header popup-contact-header">
+						<div class="popup-contact-header__item">
+							<i class="popup-contact-header__icon">
+								<img src="img/icon/twitter.svg" alt="twitter">
+							</i>
+							<a class="popup-contact-header__link" href="#">Ours Twitter</a>
+						</div>
+						<div class="popup-contact-header__item">
+							<i class="popup-contact-header__icon">
+								<img src="img/icon/telegram-first.svg" alt="telegram">
+							</i>
+							<a class="popup-contact-header__link" href="#">Telegram (En)</a>
+							<span class="popup-contact-header__link">|</span>
+							<a class="popup-contact-header__link" href="#">СНГ</a>
+						</div>
+						<div class="popup-contact-header__item">
+							<i class="popup-contact-header__icon">
+								<img src="img/icon/telegram-second.svg" alt="telegram">
+							</i>
+							<a class="popup-contact-header__link" href="#">Telegram Channel</a>
+						</div>
+					</div>
+					<div class="popup-contact__prompt popup-contact-prompt">
+						<i class="popup-contact-prompt__icon">!</i>
+						<div class="popup-contact-prompt__row">
+							<div class="popup-contact-prompt__title">Остерегайтесь мошенников.</div>
+							<p class="popup-contact-prompt__text">
+								Наша команда никогда не будет связываться с вами первой, запрашивать какие-либо конфиденциальные
+								данные (доступ к кошельку, SEED-фразу и т.д.).
+							</p>
+							<p class="popup-contact-prompt__text">
+								Помните, эффективность защиты персональных данных сильно зависит от ваших действий.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</div> -->
+	<div class="modal-wrapper__popup popup" id="deposit">
+		<div class="popup__body popup__body_deposit">
+			<div class="popup__top">
+				<div class="popup__title">
+					Deposit USDT
+				</div>
+				<button class="popup__close" data-popup-close type="button"></button>
+			</div>
+			<form class="popup__content" style="padding-top: 20px;" action="#" data-deposit-block>
+				<div class="popup-deposit__header popup-deposit-header">
+					<p class="popup-deposit-header__text">Min: 20 USDT</p>
+					<p class="popup-deposit-header__text">Max: 2000 USDT</p>
+				</div>
+				<div class="popup__deposit popup-deposit">
+					<div class="popup-deposit__row">
+						<input class="popup-deposit__input" name="deposit" step="any" data-deposit-input type="text"
+							placeholder="0">
+					</div>
+					<div class="popup-deposit__action">
+						<p class="popup-deposit__label">
+							<span data-deposit-my-value>57292.01</span> USDT Available
+						</p>
+						<div class="popup-deposit__item">
+							<button class="popup-deposit__max-value" data-deposit-max type="button">Max</button>
+							<strong class="popup-deposit__text">USDT</strong>
+						</div>
+					</div>
+				</div>
+				<div class="popup__buttons">
+					<button class="popup__button popup__button_close info-row__button_blue" type="button" data-popup-close>
+						<span class="info-row__button-text">Cancel</span>
+					</button>
+					<button class="popup__button popup__button_send info-row__button_green _disabled" type="send"
+						data-deposit-send>
+						<span class="info-row__button-text">Approve</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="modal-wrapper__popup modal-wrapper__popup_prompt popup" id="prompt">
+		<div class="popup__body popup__body_deposit">
+			<div class="popup__content popup__prompt popup-prompt">
+				<i class="popup-prompt__icon">
+					<span class="popup-prompt__icon-letter">?</span>
+				</i>
+				<div class="popup-prompt__title">
+					ParrotSwap работает только в сети BEP 20, для продолжения пожалуйста зайдите в Метамаск и сменить сеть.
+				</div>
+				<div class="popup-prompt__buttons">
+					<button class="popup-prompt__button header-actions__button header-button" data-popup-close type="button">
+						<span class="header-button__text">Ok, got it!</span>
+					</button>
+					<button class="popup-prompt__button header-actions__button header-button" type="button">
+						<span class="header-button__text">Ok, got it!</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-wrapper__popup popup" id="connect">
+		<div class="popup__body popup__body_deposit">
+			<div class="popup__top">
+				<div class="popup__title">
+					Deposit USDT
+				</div>
+				<button class="popup__close" data-popup-close type="button"></button>
+			</div>
+			<form class="popup__content popup-connect" action="#">
+				<div class="popup-connect__column">
+					<button class="popup-connect__button" name="metamask" type="submit">
+						<strong class="popup-connect__text">Metamask</strong>
+						<i class="popup-connect__icon">
+							<img src="img/popup/connect/01.png" alt="popup-connect-01">
+						</i>
+					</button>
+					<button class="popup-connect__button" name="coinbase-wallet" type="submit">
+						<strong class="popup-connect__text">Coinbase Wallet</strong>
+						<i class="popup-connect__icon">
+							<img src="img/popup/connect/02.png" alt="popup-connect-02">
+						</i>
+					</button>
+					<button class="popup-connect__button" name="wallet-connect" type="submit">
+						<strong class="popup-connect__text">WalletConnect</strong>
+						<i class="popup-connect__icon">
+							<img src="img/popup/connect/03.png" alt="popup-connect-03">
+						</i>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
    </div>
-   <script src="js/wow.min.js"></script>
-   <script src="js/app.js"></script>
+   <script src="js/my-settings.js"></script>
+   <script src="js/change-language.js"></script>
+   <script src="js/script.js"></script>
+   <script src="js/my-language.js"></script>
+   <script src="js/my-pagination.js"></script>
+   <script>
+      if (document.getElementById('preloader')) {
+         window.addEventListener("load", () => {
+            function loadData() {
+               return new Promise((resolve, reject) => {
+                  document.body.classList.add("_lock-scroll");
+                  setTimeout(resolve, timePreloader);
+                  prompts();
+                  myPopups();
+                  myBurger();
+                  myDepositValue();
+               });
+            }
+
+            loadData()
+               .then(() => {
+                  document.body.classList.remove("_lock-scroll");
+                  const preloaderEl = document.getElementById('preloader');
+                  preloaderEl.remove();
+                  timer();
+                  loadsDigits();
+               });
+         });
+      }
+   </script>
 </body>
 
 </html>
