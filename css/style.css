@@ -164,9 +164,6 @@ html:not(.light) body .footer__copy_grey, html:not(.dark) body .footer__copy_gre
     color: #019EF7;
   }
 }
-html:not(.light) body .statistics-header__text, html:not(.dark) body .statistics-header__text {
-  color: #A1A5B7;
-}
 html:not(.light) body .statistics-column-shell__button,
 html:not(.light) body .statistics-column-shell__arrow, html:not(.dark) body .statistics-column-shell__button,
 html:not(.dark) body .statistics-column-shell__arrow {
@@ -208,6 +205,23 @@ html:not(.light) body .popup-contact__prompt, html:not(.dark) body .popup-contac
   border: 1px dashed #f1416c;
   background-color: #fff5f8;
 }
+html:not(.light) body .menu-content__list-link,
+html:not(.light) body .header-language-dropdown__text,
+html:not(.light) body .header-language__selected-text,
+html:not(.light) body .statistics-header__text,
+html:not(.light) body .info-row-timer__text,
+html:not(.light) body .statistics-general__text_header,
+html:not(.light) body .footer-socials-dropdown__text,
+html:not(.light) body .info-row-prompt__dropdown, html:not(.dark) body .menu-content__list-link,
+html:not(.dark) body .header-language-dropdown__text,
+html:not(.dark) body .header-language__selected-text,
+html:not(.dark) body .statistics-header__text,
+html:not(.dark) body .info-row-timer__text,
+html:not(.dark) body .statistics-general__text_header,
+html:not(.dark) body .footer-socials-dropdown__text,
+html:not(.dark) body .info-row-prompt__dropdown {
+  color: #5e6278;
+}
 html:not(.dark).light body {
   --var-bg-color: #F5F5F5;
   --var-font-color: #A1A5B7;
@@ -246,12 +260,6 @@ html:not(.dark).light body .footer__copy_grey {
     color: #019EF7;
   }
 }
-html:not(.dark).light body .info-row-prompt__dropdown {
-  color: #6C7083;
-}
-html:not(.dark).light body .statistics-header__text {
-  color: #A1A5B7;
-}
 html:not(.dark).light body .statistics-column-shell__button,
 html:not(.dark).light body .statistics-column-shell__arrow {
   background-color: transparent;
@@ -288,6 +296,16 @@ html:not(.dark).light body .popup-contact-prompt__icon {
 html:not(.dark).light body .popup-contact__prompt {
   border: 1px dashed #f1416c;
   background-color: #fff5f8;
+}
+html:not(.dark).light body .menu-content__list-link,
+html:not(.dark).light body .header-language-dropdown__text,
+html:not(.dark).light body .header-language__selected-text,
+html:not(.dark).light body .statistics-header__text,
+html:not(.dark).light body .info-row-timer__text,
+html:not(.dark).light body .statistics-general__text_header,
+html:not(.dark).light body .footer-socials-dropdown__text,
+html:not(.dark).light body .info-row-prompt__dropdown {
+  color: #5e6278;
 }
 html:not(.light).dark body {
   --var-bg-color: #151520;
@@ -326,9 +344,6 @@ html:not(.light).dark body .footer__copy_grey {
   html:not(.light).dark body .footer__copy_grey:hover {
     color: #019EF7;
   }
-}
-html:not(.light).dark body .statistics-header__text {
-  color: #474761;
 }
 html:not(.light).dark body .statistics-column-shell__button,
 html:not(.light).dark body .statistics-column-shell__arrow {
@@ -845,7 +860,6 @@ body._lock-scroll {
   align-items: center;
   border-radius: 5px;
   background-color: transparent;
-  color: var(--color-menu-item);
   font-size: 13px;
   font-weight: 400;
   line-height: 123.0769230769%;
@@ -929,7 +943,6 @@ body._lock-scroll {
   font-size: 13px;
   font-weight: 400;
   line-height: 123.0769230769%;
-  color: var(--color-menu-item);
 }
 @media (max-width: 552.2px) {
   .header-language__selected-text {
@@ -1026,7 +1039,6 @@ body._lock-scroll {
   font-size: 13px;
   font-weight: 400;
   line-height: 123.0769230769%;
-  color: var(--color-menu-item);
 }
 @media (max-width: 552.2px) {
   .header-language-dropdown__text {
