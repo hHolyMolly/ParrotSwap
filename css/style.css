@@ -140,6 +140,7 @@ html:not(.light) body, html:not(.dark) body {
   --footer-links-color: #CFD2E3;
   --prompt-text-color: #6C7083;
   --color-deposit-text: #A1A5B7;
+  --color-font-second: #5e6278;
 }
 html:not(.light) body .popup-prompt__title, html:not(.dark) body .popup-prompt__title {
   color: var(--color-menu-item);
@@ -205,23 +206,6 @@ html:not(.light) body .popup-contact__prompt, html:not(.dark) body .popup-contac
   border: 1px dashed #f1416c;
   background-color: #fff5f8;
 }
-html:not(.light) body .menu-content__list-link,
-html:not(.light) body .header-language-dropdown__text,
-html:not(.light) body .header-language__selected-text,
-html:not(.light) body .statistics-header__text,
-html:not(.light) body .info-row-timer__text,
-html:not(.light) body .statistics-general__text_header,
-html:not(.light) body .footer-socials-dropdown__text,
-html:not(.light) body .info-row-prompt__dropdown, html:not(.dark) body .menu-content__list-link,
-html:not(.dark) body .header-language-dropdown__text,
-html:not(.dark) body .header-language__selected-text,
-html:not(.dark) body .statistics-header__text,
-html:not(.dark) body .info-row-timer__text,
-html:not(.dark) body .statistics-general__text_header,
-html:not(.dark) body .footer-socials-dropdown__text,
-html:not(.dark) body .info-row-prompt__dropdown {
-  color: #5e6278;
-}
 html:not(.dark).light body {
   --var-bg-color: #F5F5F5;
   --var-font-color: #A1A5B7;
@@ -239,6 +223,7 @@ html:not(.dark).light body {
   --footer-links-color: #CFD2E3;
   --prompt-text-color: #6C7083;
   --color-deposit-text: #A1A5B7;
+  --color-font-second: #5e6278;
 }
 html:not(.dark).light body .popup-prompt__title {
   color: var(--color-menu-item);
@@ -297,16 +282,6 @@ html:not(.dark).light body .popup-contact__prompt {
   border: 1px dashed #f1416c;
   background-color: #fff5f8;
 }
-html:not(.dark).light body .menu-content__list-link,
-html:not(.dark).light body .header-language-dropdown__text,
-html:not(.dark).light body .header-language__selected-text,
-html:not(.dark).light body .statistics-header__text,
-html:not(.dark).light body .info-row-timer__text,
-html:not(.dark).light body .statistics-general__text_header,
-html:not(.dark).light body .footer-socials-dropdown__text,
-html:not(.dark).light body .info-row-prompt__dropdown {
-  color: #5e6278;
-}
 html:not(.light).dark body {
   --var-bg-color: #151520;
   --var-font-color: #565674;
@@ -324,6 +299,7 @@ html:not(.light).dark body {
   --footer-links-color: #A1A5B7;
   --prompt-text-color: #A1A5B7;
   --color-deposit-text: #A1A5B7;
+  --color-font-second: rgb(129, 147, 170);
 }
 html:not(.light).dark body .popup-prompt__title {
   color: #e9e9f6;
@@ -863,6 +839,7 @@ body._lock-scroll {
   font-size: 13px;
   font-weight: 400;
   line-height: 123.0769230769%;
+  color: var(--color-font-second);
 }
 @media (max-width: 992.2px) {
   .menu-content__list-link {
@@ -943,6 +920,7 @@ body._lock-scroll {
   font-size: 13px;
   font-weight: 400;
   line-height: 123.0769230769%;
+  color: var(--color-font-second);
 }
 @media (max-width: 552.2px) {
   .header-language__selected-text {
@@ -1039,6 +1017,7 @@ body._lock-scroll {
   font-size: 13px;
   font-weight: 400;
   line-height: 123.0769230769%;
+  color: var(--color-font-second);
 }
 @media (max-width: 552.2px) {
   .header-language-dropdown__text {
@@ -1265,7 +1244,7 @@ body._lock-scroll {
   display: block;
 }
 .footer-socials-dropdown__text {
-  color: var(--prompt-text-color);
+  color: var(--color-font-second);
 }
 .footer-socials-dropdown__link {
   width: 100%;
@@ -2409,7 +2388,7 @@ body._lock-scroll {
   overflow-wrap: anywhere;
   line-height: 133.3333333333%;
   font-size: 13px;
-  color: var(--prompt-text-color);
+  color: var(--color-font-second);
 }
 @media (max-width: 1265px) {
   .info-row-prompt__dropdown {
@@ -2619,7 +2598,7 @@ body._lock-scroll {
   font-weight: 400;
   line-height: 125%;
   letter-spacing: 0.1em;
-  color: #6C7083;
+  color: var(--color-font-second);
 }
 @media (max-width: 1265px) {
   .info-row-timer__text {
@@ -2689,6 +2668,7 @@ body._lock-scroll {
   font-size: 13px;
   font-weight: 400;
   line-height: 123.0769230769%;
+  color: var(--color-font-second);
 }
 @media (max-width: 1265px) {
   .statistics-header__text {
@@ -2795,6 +2775,9 @@ body._lock-scroll {
 }
 .statistics-general__text_green {
   color: #50CD89;
+}
+.statistics-general__text_header {
+  color: var(--color-font-second);
 }
 
 .statistics-column-shell__arrow {
