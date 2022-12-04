@@ -314,6 +314,9 @@ html:not(.light).dark body .popup-contact__prompt {
   border: 1px dashed rgb(241, 65, 108);
   background-color: #3a2434;
 }
+html:not(.light).dark body .popup-deposit__label {
+  color: rgb(129, 147, 170);
+}
 
 .info-row-prompt__icon {
   -webkit-touch-callout: none;
@@ -1834,7 +1837,7 @@ body._lock-scroll {
     transition: border-color 0.1s ease 0s;
   }
   .popup-connect__button:hover {
-    border-color: #019EF7;
+    border-color: #0194e8;
   }
 }
 .popup-connect__text {
@@ -2238,7 +2241,7 @@ body._lock-scroll {
 }
 @media (any-hover: hover) {
   .info-row__button_green:hover {
-    background-color: #6FD891;
+    background-color: #74CA8F;
   }
 }
 .info-row__button-icon {
