@@ -2224,24 +2224,38 @@ body._lock-scroll {
   }
 }
 .info-row__button_blue {
-  transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
+  transition: background-color 0.2s ease 0s;
   background-color: var(--bg-menu-item);
 }
 .info-row__button_blue .info-row__button-text {
   color: #019EF7;
 }
-.info-row__button_blue svg path {
-  transition: fill 0.2s ease 0s;
-}
 @media (any-hover: hover) {
   .info-row__button_blue:hover {
-    background-color: #0194e8;
+    -webkit-animation: animationButtonBlue 0s ease forwards;
+            animation: animationButtonBlue 0s ease forwards;
   }
   .info-row__button_blue:hover .info-row__button-text {
     color: #ffffff;
   }
   .info-row__button_blue:hover svg path {
     fill: #ffffff;
+  }
+}
+@-webkit-keyframes animationButtonBlue {
+  from {
+    background-color: var(--bg-menu-item);
+  }
+  to {
+    background-color: #0194e8;
+  }
+}
+@keyframes animationButtonBlue {
+  from {
+    background-color: var(--bg-menu-item);
+  }
+  to {
+    background-color: #0194e8;
   }
 }
 .info-row__button_green {
@@ -2274,7 +2288,6 @@ body._lock-scroll {
   white-space: nowrap;
   font-size: 13px;
   font-weight: 400;
-  color: #ffffff;
 }
 
 .info-row-header__title {
@@ -2563,6 +2576,7 @@ body._lock-scroll {
   }
 }
 .info-row-timer__text {
+  transition: color 0.2s ease 0s;
   text-align: center;
   text-transform: uppercase;
   /* Если меньше контейнера */
@@ -2715,6 +2729,7 @@ body._lock-scroll {
   align-items: center;
   height: 100%;
   overflow: hidden;
+  transition: color 0.2s ease 0s;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 13px;
@@ -2726,9 +2741,6 @@ body._lock-scroll {
   color: #019EF7;
 }
 @media (any-hover: hover) {
-  .statistics-general__text_blue {
-    transition: color 0.2s ease 0s;
-  }
   .statistics-general__text_blue:hover {
     color: #0086e8;
   }
