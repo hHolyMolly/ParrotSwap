@@ -15,7 +15,15 @@
    <title> ParrotSwap </title>
 </head>
 
-<body>
+<body class="_lock-scroll">
+   <div class="preloader" id="preloader">
+      <div class="preloader__icon">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+      </div>
+   </div>
    <div class="wrapper">
       <div class="content">
          <header class="header">
@@ -49,7 +57,7 @@
                            <a class="menu-content__list-link" id="menu-01" href="index.html">Home</a>
                         </li>
                         <li class="menu-content__list-item">
-                           <a class="menu-content__list-link" id="menu-02" href="#">Dashboard</a>
+                           <a class="menu-content__list-link" id="menu-02" href="dashboard.html">Dashboard</a>
                         </li>
                         <li class="menu-content__list-item">
                            <a class="menu-content__list-link" id="menu-03" href="#">Audit</a>
@@ -280,14 +288,6 @@
                </div>
             </section>
          </main>
-      </div>
-      <div class="preloader" id="preloader">
-         <div class="preloader__icon">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-         </div>
       </div>
       <footer class="footer">
    <div class="_container">
@@ -525,7 +525,6 @@
          window.addEventListener("load", () => {
             function loadData() {
                return new Promise((resolve, reject) => {
-                  document.body.classList.add("_lock-scroll");
                   setTimeout(resolve, timePreloader);
                   prompts();
                   myPopups();

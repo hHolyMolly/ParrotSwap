@@ -593,10 +593,10 @@ function prompts() {
 				if (elementTarget.closest("[data-prompt-button]")) {
 					if (!elementTarget.closest("[data-prompt-button]").classList.contains("_active")) {
 						prompt.querySelector("[data-prompt-button]").classList.add("_active");
-						prompt.querySelector(".info-row-prompt__dropdown").classList.add("_active");
+						prompt.querySelector("[data-prompt-button]").nextElementSibling.classList.add("_active");
 					} else {
 						prompt.querySelector("[data-prompt-button]").classList.remove("_active");
-						prompt.querySelector(".info-row-prompt__dropdown").classList.remove("_active");
+						prompt.querySelector("[data-prompt-button]").nextElementSibling.classList.remove("_active");
 					}
 				}
 			}
@@ -608,7 +608,7 @@ function prompts() {
 			if (isMobile.any()) {
 				if (!elementTarget.closest("[data-prompt]")) {
 					prompt.querySelector("[data-prompt-button]").classList.remove("_active");
-					prompt.querySelector(".info-row-prompt__dropdown").classList.remove("_active");
+					prompt.querySelector("[data-prompt-button]").nextElementSibling.classList.remove("_active");
 				}
 			}
 		});
@@ -629,23 +629,24 @@ function timer() {
 		minutesItem = document.getElementById("minutes"),
 		secondsItem = document.getElementById("seconds");
 
-	function counterTimer() {
-		let hours = Math.floor(time / 60 / 60),
-			minutes = Math.floor(time / 60) - (hours * 60),
-			seconds = Math.floor(time % 60);
+	if (hoursItem && minutesItem && secondsItem) {
+		function counterTimer() {
+			let hours = Math.floor(time / 60 / 60),
+				minutes = Math.floor(time / 60) - (hours * 60),
+				seconds = Math.floor(time % 60);
 
-		function setTime(setItem, whatItem) {
-			setItem = setItem < 10 ? "0" + setItem : setItem;
-			whatItem.innerHTML = `${setItem}`;
+			function setTime(setItem, whatItem) {
+				setItem = setItem < 10 ? "0" + setItem : setItem;
+				whatItem.innerHTML = `${setItem}`;
+			}
+
+			setTime(hours, hoursItem);
+			setTime(minutes, minutesItem);
+			setTime(seconds, secondsItem);
+
+			time--;
 		}
-
-		setTime(hours, hoursItem);
-		setTime(minutes, minutesItem);
-		setTime(seconds, secondsItem);
-
-		time--;
 	}
-
 }
 
 function loadsDigits() {
@@ -934,18 +935,24 @@ function loadsDigits() {
 			return CountUp;
 		}());
 
-		function countGo(itemCounter, counterValue) {
+		let counterPrefix;
+		let counterSuffix;
+		let counterDecimal;
+
+		countGo(itemCounter = 'first', counterPrefix = "$", counterSuffix = "", counterDecimal = "", counterValue = 182426);
+		countGo(itemCounter = 'second', counterPrefix = "$", counterSuffix = "", counterDecimal = "", counterValue = 42675);
+
+		function countGo(itemCounter, counterPrefix, counterSuffix, counterDecimal, counterValue) {
 			const options = {
 				prefix: counterPrefix,
+				suffix: counterSuffix,
+				decimalPlaces: counterDecimal,
 				duration: animationCounter,
 				separator: counterSeparator,
 			};
 			let counter = new CountUp(itemCounter, counterValue, options);
 			counter.start();
 		}
-
-		countGo(itemCounter = 'first', counterValue = 182426);
-		countGo(itemCounter = 'second', counterValue = 42675);
 	}
 }
 
@@ -979,6 +986,11 @@ function myDepositValue() {
 
 				minValueInputDeposit();
 				maxValueInputDeposit();
+
+				if (this.value.match(/[^0-9]|^0{1}/g)) {
+					this.value = '';
+				}
+
 			});
 			depositMax.addEventListener("click", function () {
 				const item = Number(myValue.innerHTML);
@@ -1043,4 +1055,39 @@ function footerSocialLinks() {
 		});
 	});
 }
-footerSocialLinks()
+footerSocialLinks();
+
+function parentRemove() {
+	const parentBlocks = document.querySelectorAll("[data-parent-remove]");
+
+	const checkHidden = get("removeBlock");
+	if (checkHidden === null) {
+	} else {
+		parentBlocks.forEach(parentBlock => {
+			checkHidden === "removePromptBlock" ? parentBlock.remove() : null;
+		});
+	}
+
+	parentBlocks.forEach(parentBlock => {
+		parentBlock.addEventListener("click", (e) => {
+			const elementTarget = e.target;
+			if (elementTarget.closest("[data-button-remove]")) {
+				parentBlock.remove();
+				save("removeBlock", "removePromptBlock")
+			}
+		});
+	});
+}
+parentRemove();
+
+function copyReferral() {
+	const copyButton = document.querySelector("[data-copy-button]");
+	const copyInput = document.querySelector("[data-copy-input]");
+
+	if (copyButton && copyInput) {
+		copyButton.addEventListener("click", () => {
+			copyInput.select();
+			document.execCommand("copy");
+		});
+	}
+}
