@@ -616,20 +616,20 @@ function prompts() {
 }
 
 function timer() {
-	let time = setTimer;
+	if (document.getElementById("hours") && document.getElementById("minutes") && document.getElementById("seconds")) {
+		let time = setTimer;
 
-	setInterval(() => {
-		if (time < 1) {
-			time = setTimer;
-		}
-	}, setTimer);
+		setInterval(() => {
+			if (time < 1) {
+				time = setTimer;
+			}
+		}, setTimer);
 
-	setInterval(counterTimer, 1000);
-	const hoursItem = document.getElementById("hours"),
-		minutesItem = document.getElementById("minutes"),
-		secondsItem = document.getElementById("seconds");
+		setInterval(counterTimer, 1000);
+		const hoursItem = document.getElementById("hours"),
+			minutesItem = document.getElementById("minutes"),
+			secondsItem = document.getElementById("seconds");
 
-	if (hoursItem && minutesItem && secondsItem) {
 		function counterTimer() {
 			let hours = Math.floor(time / 60 / 60),
 				minutes = Math.floor(time / 60) - (hours * 60),
