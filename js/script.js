@@ -1091,3 +1091,102 @@ function copyReferral() {
 		});
 	}
 }
+
+function addAlerts() {
+	let positionNextElement = 0;
+	let positionElement;
+
+	document.addEventListener("click", (e) => {
+		const elementTarget = e.target;
+
+		const alerts = document.querySelectorAll(".alerts-wrapper__item");
+
+		let colors = ["blue", "green", "red"];
+
+		if (elementTarget.closest("[data-alert-add]")) {
+			if (alerts.length <= 2) {
+				const alertsParent = document.querySelector('.alerts-wrapper');
+
+				alerts.forEach(alert => {
+					positionElement = window.getComputedStyle(alert).bottom.replace("px", "");
+					positionElement === undefined ?
+						positionNextElement = 0 :
+						positionNextElement = Number(positionElement) + Number(window.getComputedStyle(alert).height.replace("px", "")) + 25;
+				});
+
+				alerts.length === 0 || positionNextElement > 250 ? positionNextElement = 0 : null;
+
+				let template = `
+					<div class="alerts-wrapper__item alerts" style="bottom: ${positionNextElement}px;">
+						<div class="alerts__body">
+							<div class="alerts__title">
+								Ошибка (Erirsd 8248)
+							</div>
+							<p class="alerts__text">
+								Пожалуйта повторите попытку. И нажмите кнопку еще раз.
+							</p>
+						</div>
+						<button class="alerts__close _close" data-alert-close type="button"></button>
+					</div>
+				`
+
+				alertsParent.insertAdjacentHTML("beforeEnd", template);
+
+				let i = 0;
+				for (let alert of alerts) {
+					alert.classList.add(`alerts-wrapper__item_${colors[i]}`);
+
+					++i;
+					if (i == colors.length) {
+						i = 0;
+					}
+				}
+			}
+		}
+
+		alerts.forEach(alert => {
+			const alertClose = alert.querySelector("[data-alert-close]");
+
+			if (elementTarget === alertClose) {
+				alert.style.opacity = "0";
+
+				setTimeout(() => {
+					alert.remove();
+				}, 600);
+
+			}
+		});
+	});
+
+	document.addEventListener("DOMNodeRemoved", () => {
+		const alerts = document.querySelectorAll(".alerts-wrapper__item");
+
+		if (alerts.length > 0) {
+			if (alerts.length === 3) {
+				alerts[1].style.bottom = "0px";
+				alerts[2].style.bottom = `${Number(window.getComputedStyle(alerts[1]).height.replace("px", "")) + 25}px`;
+			}
+
+			if (alerts.length === 2) {
+				alerts[1].style.bottom = `25px`;
+			}
+		}
+	});
+
+	document.addEventListener("DOMSubtreeModified", () => {
+		const alerts = document.querySelectorAll(".alerts-wrapper__item");
+
+		alerts.forEach(alert => {
+			setTimeout(() => {
+				setTimeout(() => {
+					alert.style.opacity = "0";
+				}, 300);
+				setTimeout(() => {
+
+					alert.remove();
+				}, 600);
+			}, 4000);
+		});
+	});
+}
+addAlerts();

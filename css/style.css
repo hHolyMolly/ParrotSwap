@@ -608,6 +608,7 @@ body._lock-scroll {
   justify-content: center;
   align-items: center;
   border-radius: 4px;
+  transition: background-color 0.2s ease 0s;
   background-color: transparent;
 }
 .header-actions__theme:not(:last-child) {
@@ -620,9 +621,6 @@ body._lock-scroll {
   }
 }
 @media (any-hover: hover) {
-  .header-actions__theme {
-    transition: background-color 0.2s ease 0s;
-  }
   .header-actions__theme:hover {
     background-color: var(--bg-menu-item);
   }
@@ -635,7 +633,7 @@ body._lock-scroll {
   height: 18px;
 }
 .header-actions__theme-icon path {
-  transition: fill 0.2s ease 0s;
+  transition: fill 0.1s ease 0s;
 }
 .header-actions__theme-icon_light {
   display: none;
@@ -2022,6 +2020,80 @@ body._lock-scroll {
   }
 }
 
+.alerts-wrapper {
+  pointer-events: none;
+  position: fixed;
+  bottom: 25px;
+  right: 15px;
+}
+.alerts-wrapper__item {
+  padding: 10px 10px 25px 15px;
+  /* Если меньше контейнера */
+  width: 450px;
+  display: flex;
+  align-items: flex-start;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  pointer-events: auto;
+  border-radius: 6px;
+  transition: opacity 0.4s ease 0s, bottom 0.1s ease 0s;
+  -webkit-animation: animationAlert 0.3s ease;
+          animation: animationAlert 0.3s ease;
+  background-color: #F9E1E5;
+  color: #AF233A;
+}
+@media (max-width: 1260px) {
+  .alerts-wrapper__item {
+    width: calc(250px + 200 * ((100vw - 320px) / 940));
+  }
+}
+@-webkit-keyframes animationAlert {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animationAlert {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.alerts-wrapper__item_red {
+  background-color: #F9E1E5;
+  color: #AF233A;
+}
+.alerts-wrapper__item_green {
+  background-color: #D6F0E0;
+  color: #0D6832;
+}
+.alerts-wrapper__item_blue {
+  background-color: #DDF1F7;
+  color: #1C657D;
+}
+
+.alerts__body {
+  flex: 0 1 100%;
+}
+.alerts__title {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 161.5384615385%;
+}
+.alerts__title:not(:last-child) {
+  margin-bottom: 5px;
+}
+.alerts__text {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 161.5384615385%;
+}
 .info__body {
   /* Если меньше контейнера */
   -moz-column-gap: 30px;
