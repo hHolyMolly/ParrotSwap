@@ -2165,11 +2165,17 @@ body._lock-scroll {
 .info-row__header {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
+  position: relative;
 }
 .info-row__header:not(:last-child) {
   margin-bottom: 20px;
+}
+@media (max-width: 480.2px) {
+  .info-row__header {
+    flex-direction: column;
+  }
 }
 .info-row__content {
   width: 100%;
@@ -2374,7 +2380,7 @@ body._lock-scroll {
   line-height: 123.0769230769%;
 }
 .info-row-header__title:not(:last-child) {
-  margin-right: 15px;
+  margin-right: 6px;
 }
 .info-row-header__title_green {
   transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
@@ -2386,8 +2392,41 @@ body._lock-scroll {
   background-color: var(--bg-menu-item);
   color: #019EF7;
 }
+@media (max-width: 480.2px) {
+  .info-row-header__title_blue {
+    max-width: 90%;
+  }
+  .info-row-header__title_blue:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 6px;
+  }
+}
+@media (min-width: 480.2px) {
+  .info-row-header__title_big {
+    white-space: normal;
+    text-overflow: clip;
+    overflow: visible;
+  }
+}
+@media (any-hover: hover) {
+  .info-row-header__title_big:hover {
+    color: #0086e8;
+  }
+}
 .info-row-header__prompt {
   position: relative;
+}
+@media (min-width: 480.2px) {
+  .info-row-header__prompt {
+    margin-left: auto;
+  }
+}
+@media (max-width: 480.2px) {
+  .info-row-header__prompt {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 @media (any-hover: hover) {
   .info-row-header__prompt {
@@ -3482,6 +3521,7 @@ body._lock-scroll {
   margin-bottom: 10px;
 }
 .referral__text {
+  transition: color 0.2s ease 0s;
   font-size: 13px;
   font-weight: 400;
   line-height: 161.5384615385%;
@@ -3555,6 +3595,14 @@ body._lock-scroll {
   font-weight: 500;
   line-height: 123.0769230769%;
   color: var(--var-font-color);
+}
+.referral-actions__input::-moz-selection {
+  background-color: transparent;
+  color: #50CD89;
+}
+.referral-actions__input::selection {
+  background-color: transparent;
+  color: #50CD89;
 }
 .referral-actions__input:not(:last-child) {
   margin-right: 10px;

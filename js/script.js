@@ -1088,6 +1088,10 @@ function copyReferral() {
 		copyButton.addEventListener("click", () => {
 			copyInput.select();
 			document.execCommand("copy");
+
+			setTimeout(() => {
+				window.getSelection().removeAllRanges();
+			}, 1500);
 		});
 	}
 }
@@ -1104,6 +1108,7 @@ function addAlerts() {
 		let colors = ["blue", "green", "red"];
 
 		if (elementTarget.closest("[data-alert-add]")) {
+
 			if (alerts.length <= 2) {
 				const alertsParent = document.querySelector('.alerts-wrapper');
 
@@ -1114,7 +1119,7 @@ function addAlerts() {
 						positionNextElement = Number(positionElement) + Number(window.getComputedStyle(alert).height.replace("px", "")) + 25;
 				});
 
-				alerts.length === 0 || positionNextElement > 250 ? positionNextElement = 0 : null;
+				alerts.length === 0 || positionNextElement > 350 ? positionNextElement = 0 : null;
 
 				let template = `
 					<div class="alerts-wrapper__item alerts" style="bottom: ${positionNextElement}px;">
@@ -1168,7 +1173,7 @@ function addAlerts() {
 			}
 
 			if (alerts.length === 2) {
-				alerts[1].style.bottom = `25px`;
+				alerts[1].style.bottom = `0px`;
 			}
 		}
 	});
