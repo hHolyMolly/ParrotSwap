@@ -2410,6 +2410,9 @@ body._lock-scroll {
   }
 }
 @media (any-hover: hover) {
+  .info-row-header__title_big {
+    transition: color 0.2s ease 0s;
+  }
   .info-row-header__title_big:hover {
     color: #0086e8;
   }
