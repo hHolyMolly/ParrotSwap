@@ -344,20 +344,20 @@ html:not(.light).dark body .popup-deposit__label {
 html:not(.light).dark body .statistics-general__text_green {
   color: #50CD89;
 }
-html:not(.light).dark body .alerts__close:before, html:not(.light).dark body .alerts__close:after {
-  background-color: #9A9A9A;
-}
-@media (any-hover: hover) {
-  html:not(.light).dark body .alerts__close:hover:before, html:not(.light).dark body .alerts__close:hover:after {
-    background-color: #464646;
-  }
-}
 html:not(.light).dark body .your-stats-prompt__close:before, html:not(.light).dark body .your-stats-prompt__close:after {
   background-color: #717178;
 }
 @media (any-hover: hover) {
   html:not(.light).dark body ._close:hover:before, html:not(.light).dark body ._close:hover:after {
     background-color: var(--color-close-hover);
+  }
+}
+html:not(.light).dark body .alerts__close:before, html:not(.light).dark body .alerts__close:after {
+  background-color: #9A9A9A;
+}
+@media (any-hover: hover) {
+  html:not(.light).dark body .alerts__close:hover:before, html:not(.light).dark body .alerts__close:hover:after {
+    background-color: #464646;
   }
 }
 
