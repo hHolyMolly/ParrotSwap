@@ -632,9 +632,6 @@ body._lock-scroll {
   width: 18px;
   height: 18px;
 }
-.header-actions__theme-icon path {
-  transition: fill 0.1s ease 0s;
-}
 .header-actions__theme-icon_light {
   display: none;
 }
@@ -1489,7 +1486,7 @@ body._lock-scroll {
   border: 1px dashed var(--color-border-dashed);
 }
 .popup__deposit:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 6px;
 }
 .popup__buttons {
   display: flex;
@@ -2046,7 +2043,7 @@ body._lock-scroll {
 }
 @media (max-width: 1260px) {
   .alerts-wrapper__item {
-    width: calc(250px + 200 * ((100vw - 320px) / 940));
+    width: calc(260px + 190 * ((100vw - 320px) / 940));
   }
 }
 @-webkit-keyframes animationAlert {
