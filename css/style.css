@@ -344,6 +344,17 @@ html:not(.light).dark body .popup-deposit__label {
 html:not(.light).dark body .statistics-general__text_green {
   color: #50CD89;
 }
+html:not(.light).dark body .alerts__close:before, html:not(.light).dark body .alerts__close:after {
+  background-color: #9A9A9A;
+}
+@media (any-hover: hover) {
+  html:not(.light).dark body .alerts__close:hover:before, html:not(.light).dark body .alerts__close:hover:after {
+    background-color: #464646;
+  }
+}
+html:not(.light).dark body .your-stats-prompt__close:before, html:not(.light).dark body .your-stats-prompt__close:after {
+  background-color: #717178;
+}
 
 ._title {
   transition: color 0.2s ease 0s;
@@ -2036,7 +2047,7 @@ body._lock-scroll {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 2000;
   pointer-events: auto;
   border-radius: 6px;
   opacity: 0.9;
